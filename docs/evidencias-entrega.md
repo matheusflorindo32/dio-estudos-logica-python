@@ -13,6 +13,7 @@
 | Status da Wiki | PENDENTE — configuração habilitada, mas a Wiki ainda não foi inicializada |
 | Status do GitHub Actions | APROVADO — Python 3.11 e 3.12 |
 | Execução após o merge | <https://github.com/matheusflorindo32/dio-estudos-logica-python/actions/runs/30746960378> |
+| Execução após atualizar as Actions | <https://github.com/matheusflorindo32/dio-estudos-logica-python/actions/runs/30747091128> |
 | Branch utilizada | `feature/estruturas-condicionais` — removida do remoto após o merge |
 | Testes locais | 39 aprovados, 0 reprovados, com Python 3.11.15 e pytest 8.4.1 |
 | Compilação local | APROVADA — `python -m compileall .` sem erro |
@@ -28,7 +29,11 @@ aec1dfe chore: inicia estrutura do projeto
 1095d65 ci: adiciona workflow de testes
 8f4e257 feat: aprimora exemplo de estruturas condicionais
 2dc87bd Merge pull request #2 from matheusflorindo32/feature/estruturas-condicionais
+1e883b4 docs: registra evidências da entrega
+b3fdf46 ci: atualiza actions para Node.js 24
 ```
+
+O commit que atualiza este próprio registro pode ser consultado com `git log --oneline --reverse`; ele não é autorreferenciado com um hash dentro do mesmo conteúdo.
 
 ## Validações executadas
 
@@ -38,7 +43,7 @@ python -m compileall .
 python -m pytest -v
 ```
 
-Resultado final local: `39 passed in 0.07s`. No GitHub Actions, os jobs de Python 3.11 e 3.12 passaram no push da branch, no Pull Request e no commit de merge.
+Resultado final local: `39 passed in 0.07s`. No GitHub Actions, os jobs de Python 3.11 e 3.12 passaram no push da branch, no Pull Request, no commit de merge e após a atualização para `actions/checkout@v7` e `actions/setup-python@v7`.
 
 ## Situação da Wiki
 
