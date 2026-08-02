@@ -1,66 +1,58 @@
-# Estudos de Lógica de Programação com Python
+# Python Logic Lab
 
-[![Testes Python](https://github.com/matheusflorindo32/dio-estudos-logica-python/actions/workflows/python-tests.yml/badge.svg)](https://github.com/matheusflorindo32/dio-estudos-logica-python/actions/workflows/python-tests.yml)
-[![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
-[![Licença MIT](https://img.shields.io/badge/licen%C3%A7a-MIT-green.svg)](LICENSE)
+**Learn programming logic through tested code, scientific foundations, and open-source practices.**
 
-Repositório educacional com exemplos simples, testáveis e comentados sobre os fundamentos da lógica de programação usando Python. O projeto foi criado para o desafio da DIO **“Utilizando Recursos do GitHub em um Projeto Open Source”**.
+[![Python quality](https://github.com/matheusflorindo32/dio-estudos-logica-python/actions/workflows/python-tests.yml/badge.svg)](https://github.com/matheusflorindo32/dio-estudos-logica-python/actions/workflows/python-tests.yml)
+[![Python 3.11–3.14](https://img.shields.io/badge/Python-3.11%E2%80%933.14-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Ruff](https://img.shields.io/badge/code_style-Ruff-D7FF64?logo=ruff&logoColor=black)](https://docs.astral.sh/ruff/)
+[![mypy](https://img.shields.io/badge/types-mypy-2A6DB2)](https://mypy-lang.org/)
+[![MIT license](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-## Objetivo do desafio
+**English** · [Português do Brasil](README.pt-BR.md)
 
-Praticar lógica de programação e demonstrar, em um projeto individual legítimo, um fluxo open source com documentação, templates, Issue, branch, Pull Request, automação de testes e Wiki.
+> DIO evaluators: [full Portuguese version available here](README.pt-BR.md).
 
-## Conteúdos estudados
+[Official Wiki](https://github.com/matheusflorindo32/dio-estudos-logica-python/wiki) · [Quick start](#quick-start) · [Learning path](#learning-path) · [Contributing](#contributing)
 
-- variáveis, tipos de dados e operadores;
-- estruturas condicionais com `if`, `elif` e `else`;
-- repetições com `for` e `while`;
-- funções, parâmetros, retornos, docstrings e type hints;
-- listas, ordenação, busca, remoção e compreensão de listas;
-- separação entre lógica de negócio e interface de terminal;
-- testes automatizados com pytest.
+An open educational repository for learning programming logic with small, executable Python programs. It combines an incremental study path, peer-reviewed computing-education research, automated tests, static analysis, and a published GitHub Wiki.
 
-## Recursos do GitHub utilizados
+## Overview
 
-- repositório público e licença MIT;
-- templates de Issue e Pull Request;
-- branch de funcionalidade e Pull Request ligado a uma Issue;
-- GitHub Actions para Python 3.11 e 3.12;
-- [Wiki oficial](https://github.com/matheusflorindo32/dio-estudos-logica-python/wiki) publicada com conteúdo didático e referências verificadas;
-- arquivos comunitários: `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md` e `CHANGELOG.md`.
+An open-source learning laboratory for programming logic with Python, combining progressive examples, automated tests, software quality checks, and published scientific literature. It is designed for beginners, DIO learners, educators, and contributors who want a compact project whose claims can be reproduced locally and in CI.
 
-Os registros verificáveis estão em [docs/recursos-github-utilizados.md](docs/recursos-github-utilizados.md) e [docs/evidencias-entrega.md](docs/evidencias-entrega.md).
+## Why this repository exists
 
-## Estrutura do projeto
+The project turns introductory concepts into observable behavior: each challenge can be run from the terminal, its business rules can be imported, and relevant success, boundary, and failure paths are tested. It also demonstrates a transparent open-source workflow using Issues, branches, pull requests, continuous integration, community files, and documentation.
 
-```text
-dio-estudos-logica-python/
-├── .github/                 # Templates e workflow de integração contínua
-├── desafios/                # Exercícios didáticos de fundamentos
-├── docs/                    # Guias, plano e evidências da entrega
-├── exemplos/                # Aplicações de terminal com lógica testável
-├── tests/                   # Testes automatizados
-├── wiki/                    # Fontes das páginas da Wiki
-├── CHANGELOG.md
-├── CODE_OF_CONDUCT.md
-├── CONTRIBUTING.md
-├── LICENSE
-├── README.md
-├── pyproject.toml
-└── requirements-dev.txt
-```
+## Learning outcomes
 
-## Requisitos
+After completing the path, learners should be able to:
 
-- Python 3.11 ou superior;
-- Git, para trabalhar com branches e contribuições;
-- pytest, instalado por `requirements-dev.txt`, para executar os testes.
+- model simple problems with variables, operators, conditions, loops, functions, and lists;
+- distinguish reusable business logic from terminal input and output;
+- validate inputs and handle predictable errors with useful messages;
+- use type hints, docstrings, focused functions, and immutable views where appropriate;
+- test normal, boundary, invalid-input, and command-line behaviors with pytest;
+- run lint, formatting, type, coverage, and compatibility checks locally.
 
-O projeto não possui dependências de execução além da biblioteca padrão do Python.
+## Learning path
 
-## Instalação
+| Stage | Focus | Practice |
+|---|---|---|
+| 1 | Variables, types, and operators | `desafios/01_variaveis.py` |
+| 2 | Conditions and boundaries | `desafios/02_condicionais.py` |
+| 3 | `for`, `while`, and loop control | `desafios/03_repeticoes.py` |
+| 4 | Functions, contracts, and type hints | `desafios/04_funcoes.py` |
+| 5 | Lists, search, ordering, and removal | `desafios/05_listas.py` |
+| 6 | Testable terminal applications | `exemplos/` and `tests/` |
 
-### PowerShell (Windows)
+See the [five-week study plan](docs/plano-de-estudos.md) and the [official Wiki](https://github.com/matheusflorindo32/dio-estudos-logica-python/wiki) for explanations, guided activities, independent exercises, and references.
+
+## Quick start
+
+Requirements: Python 3.11–3.14 and Git. The programs use only the Python standard library; development tools are isolated in `requirements-dev.txt`.
+
+### Windows PowerShell
 
 ```powershell
 git clone https://github.com/matheusflorindo32/dio-estudos-logica-python.git
@@ -69,9 +61,10 @@ python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
 python -m pip install -r requirements-dev.txt
+python -m pytest -v
 ```
 
-### Bash (Linux e macOS)
+### Linux and macOS
 
 ```bash
 git clone https://github.com/matheusflorindo32/dio-estudos-logica-python.git
@@ -80,80 +73,104 @@ python3 -m venv .venv
 source .venv/bin/activate
 python3 -m pip install --upgrade pip
 python3 -m pip install -r requirements-dev.txt
+python3 -m pytest -v
 ```
 
-## Executando os exemplos
+## Practical examples
 
-Cada arquivo pode ser executado isoladamente a partir da raiz do projeto:
+Run an interactive program from the repository root:
 
-```powershell
-python .\exemplos\calculadora.py
-python .\exemplos\organizador_estudos.py
-python .\exemplos\verificador_aprovacao.py
-python .\desafios\02_condicionais.py
+```bash
+python exemplos/calculadora.py
+python exemplos/organizador_estudos.py
+python exemplos/verificador_aprovacao.py
 ```
 
-No Bash, substitua as barras invertidas por `/` e, se necessário, use `python3`.
-
-### Exemplo de uso
-
-```text
-Primeiro número: 12
-Operação (+, -, *, /): /
-Segundo número: 4
-Resultado: 3
-```
-
-As regras também podem ser importadas sem iniciar a interface:
+Import the same rules without starting the terminal interface:
 
 ```python
-from exemplos.calculadora import dividir
+from exemplos.calculadora import calcular
 
-resultado = dividir(12, 4)
-print(resultado)  # 3.0
+result = calcular(12, "/", 4)
+print(result)  # 3.0
 ```
 
-## Executando os testes
+The calculator validates operators and zero division. The study organizer validates descriptions and identifiers, while exposing tasks as an immutable tuple. These behaviors are covered by unit and command-line smoke tests.
 
-```powershell
+## Quality gates
+
+The current local baseline is **76 passing tests** and **100% combined line and branch coverage** across `desafios/` and `exemplos/`. The enforced minimum is 90%; reproduce the result instead of relying on a static coverage badge:
+
+```bash
 python -m compileall .
-python -m pytest -v
+python -m ruff check .
+python -m ruff format --check .
+python -m mypy exemplos desafios
+python -m pytest --cov=exemplos --cov=desafios --cov-branch --cov-report=term-missing
 ```
 
-No Bash, os mesmos comandos funcionam com `python3` quando esse for o nome do executável. O workflow em `.github/workflows/python-tests.yml` repete os testes no Ubuntu com Python 3.11 e 3.12.
+GitHub Actions runs the complete quality job on Python 3.14 and executes the test suite on Python 3.11, 3.12, 3.13, and 3.14. See the [quality guide](docs/quality.md) for scope and interpretation.
 
-## Fluxo individual com Issue, branch e Pull Request
+## Test coverage
 
-O projeto demonstra colaboração sem inventar outra identidade:
+pytest-cov measures both statements and decision branches. The configuration rejects coverage below 90%, reports missing lines and partial branches in the terminal, generates local HTML and XML reports, and uploads the XML report from CI. Generated reports are deliberately excluded from version control.
 
-1. o proprietário registra uma melhoria em uma Issue;
-2. cria a branch `feature/estruturas-condicionais`;
-3. implementa e testa a mudança;
-4. abre um Pull Request relacionado à Issue;
-5. aguarda o GitHub Actions;
-6. faz o merge somente após os testes passarem.
+## Repository map
 
-Esse processo mantém discussão, código e automação rastreáveis mesmo em um projeto individual.
+```text
+.
+├── .github/          # CI workflow and contribution templates
+├── desafios/         # Incremental fundamentals exercises
+├── exemplos/         # Testable terminal applications
+├── tests/            # Unit, boundary, error, and CLI tests
+├── wiki/             # Versioned sources for the official Wiki
+├── docs/             # Study, quality, science, and delivery records
+├── README.md         # International English documentation
+├── README.pt-BR.md   # Equivalent Brazilian Portuguese documentation
+├── pyproject.toml    # Project and tool configuration
+└── requirements-dev.txt
+```
 
-## Como contribuir
+## Evidence-informed teaching
 
-Leia [CONTRIBUTING.md](CONTRIBUTING.md) e o [Código de Conduta](CODE_OF_CONDUCT.md). Sugestões podem ser registradas pelas templates de Issue. Antes de abrir um Pull Request, execute a compilação e os testes.
+The teaching approach uses progressive examples, explicit tracing, boundary tests, and separation of concerns. Its foundation is documented with published literature on novice misconceptions, error patterns, cognitive load, computational thinking, and learning strategies. Bibliographic metadata and persistent DOI links are recorded in [Scientific foundation](docs/scientific-foundation.md); documentation policy excludes unpublished manuscripts from the active bibliography.
 
-## Licença
+Recommended books used as complementary references are Eric Matthes's *Python Crash Course*, 3rd edition (No Starch Press, 2023), and Luciano Ramalho's *Fluent Python*, 2nd edition (O'Reilly Media, 2022).
 
-Distribuído sob a licença MIT. Consulte [LICENSE](LICENSE).
+Key sources include Robins, Rountree, and Rountree on learning programming ([DOI](https://doi.org/10.1076/csed.13.2.137.14200)); Lahtinen, Ala-Mutka, and Järvinen on novice difficulties ([DOI](https://doi.org/10.1145/1151954.1067453)); Sweller on cognitive load ([DOI](https://doi.org/10.1207/s15516709cog1202_4)); and Duran, Zavgorodniaia, and Sorva on cognitive load research in computing education ([DOI](https://doi.org/10.1145/3483843)). Language behavior is grounded in the [Python 3.14 documentation](https://docs.python.org/3.14/).
 
-## Autor
+## Official Wiki
 
-**Matheus Florindo de Deus**
+The [published Wiki](https://github.com/matheusflorindo32/dio-estudos-logica-python/wiki) contains five connected pages with prerequisites, learning objectives, annotated examples, walkthroughs, common errors, good practices, guided and independent exercises, repository links, and persistent references.
 
-## Checklist da entrega DIO
+## Internationalization
 
-- [x] exemplos de lógica de programação em Python;
-- [x] testes automatizados e workflow de CI;
-- [x] README e documentação open source;
-- [x] templates de Issue e Pull Request;
-- [x] licença MIT;
-- [x] Wiki preparada no diretório `wiki/`;
-- [x] Issue, Pull Request, merge e GitHub Actions confirmados;
-- [x] Wiki oficial publicada e cinco páginas verificadas.
+English is the international landing language; Brazilian Portuguese is the complete learner-facing counterpart. Exercises and the Wiki remain in Brazilian Portuguese to preserve a coherent curriculum and API. See the [synchronization policy](docs/internationalization.md).
+
+## Documentation
+
+- [Official GitHub Wiki](https://github.com/matheusflorindo32/dio-estudos-logica-python/wiki)
+- [Study plan](docs/plano-de-estudos.md)
+- [Quality assurance](docs/quality.md)
+- [Scientific foundation](docs/scientific-foundation.md)
+- [Internationalization strategy](docs/internationalization.md)
+- [GitHub resources and delivery evidence](docs/recursos-github-utilizados.md)
+
+## Contributing
+
+Read [CONTRIBUTING.md](CONTRIBUTING.md), the [didactic contribution guide](docs/guia-de-contribuicao.md), and the [Code of Conduct](CODE_OF_CONDUCT.md). Keep changes focused, open an Issue when appropriate, add or update tests, and run every quality command before submitting a pull request.
+
+## Roadmap
+
+- maintain compatibility with supported Python releases;
+- expand exercises only when they add a clear learning outcome and useful tests;
+- evolve accessibility and navigation through learner feedback;
+- evaluate additional languages only with an accountable reviewer and synchronization process.
+
+## License
+
+Distributed under the [MIT License](LICENSE).
+
+## Author
+
+Created and maintained by **Matheus Florindo de Deus**.

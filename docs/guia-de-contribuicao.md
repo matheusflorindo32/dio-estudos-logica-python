@@ -20,7 +20,12 @@ O Pull Request reúne diferenças, discussão e resultado da automação. Mesmo 
 git switch main
 git pull --ff-only
 git switch -c feat/nova-atividade
-# altere arquivos e execute os testes
+# altere arquivos e execute os controles de qualidade
+python -m compileall .
+python -m ruff check .
+python -m ruff format --check .
+python -m mypy exemplos desafios
+python -m pytest --cov=exemplos --cov=desafios --cov-branch --cov-report=term-missing
 git add caminho/do/arquivo tests/test_correspondente.py
 git commit -m "feat: adiciona nova atividade"
 git push -u origin feat/nova-atividade
@@ -33,6 +38,11 @@ Depois, abra o Pull Request no GitHub, relacione a Issue com `Closes #NUMERO` e 
 - a solução realmente atende aos critérios da Issue;
 - nomes, docstrings e mensagens estão claros;
 - entradas inválidas são tratadas;
-- testes cobrem sucesso e erro;
+- testes cobrem sucesso, fronteiras, erro e branches relevantes;
+- cobertura combinada permanece acima do mínimo de 90%;
+- Ruff, mypy, compilação e pytest passam;
+- README inglês e português permanecem equivalentes quando aplicável;
+- referências acadêmicas possuem publicação formal, metadados e DOI verificável;
 - nenhuma credencial ou informação privada foi incluída.
 
+Consulte [quality.md](quality.md) para a finalidade de cada controle e [scientific-foundation.md](scientific-foundation.md) para a política de fontes.

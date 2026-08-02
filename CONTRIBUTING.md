@@ -24,7 +24,11 @@ Obrigado pelo interesse em melhorar este material educacional. Toda participaç�
    ```bash
    python -m pip install -r requirements-dev.txt
    python -m compileall .
+   python -m ruff check .
+   python -m ruff format --check .
+   python -m mypy exemplos desafios
    python -m pytest -v
+   python -m pytest --cov=exemplos --cov=desafios --cov-branch --cov-report=term-missing
    ```
 
 6. Faça commits claros. Exemplos de convenção:
@@ -38,9 +42,10 @@ Obrigado pelo interesse em melhorar este material educacional. Toda participaç�
 
 ## Padrões esperados
 
-- Preserve o objetivo didático e use português do Brasil na documentação.
+- Preserve o objetivo didático; mantenha equivalência entre `README.md` e `README.pt-BR.md` quando alterar fatos compartilhados.
 - Escreva funções pequenas, com nomes claros, type hints e docstrings.
 - Não inclua credenciais, dados pessoais ou dependências desnecessárias.
 - Inclua testes para toda alteração de regra de negócio.
+- Mantenha a cobertura combinada de linhas e branches em pelo menos 90%.
+- Use documentação oficial e literatura publicada e verificável para afirmações técnicas ou científicas.
 - Seja respeitoso ao propor, revisar ou discutir mudanças.
-
