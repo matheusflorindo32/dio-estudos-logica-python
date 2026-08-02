@@ -1,88 +1,157 @@
-# Estudos de Lógica de Programação com Python
+<div align="center">
 
-Bem-vindo à Wiki do projeto. Este espaço organiza conceitos fundamentais, exemplos e caminhos de estudo para quem está começando a programar com Python. A proposta combina leitura, previsão, execução e teste — práticas que ajudam a transformar comandos isolados em estratégias de resolução de problemas (ROBINS; ROUNTREE; ROUNTREE, 2003).
+<img src="https://raw.githubusercontent.com/matheusflorindo32/dio-estudos-logica-python/main/docs/assets/wiki/wiki-home.svg" alt="Mapa visual da Wiki Python Logic Lab" width="100%">
 
-## Objetivos de aprendizagem
+**Uma trilha visual para aprender, prever, executar, testar e explicar.**
 
-Ao percorrer a Wiki, você deverá ser capaz de:
+[Começar pelos fundamentos](Introducao-a-Logica-de-Programacao-com-Python) · [Abrir o repositório](https://github.com/matheusflorindo32/dio-estudos-logica-python) · [Ver qualidade](https://github.com/matheusflorindo32/dio-estudos-logica-python/actions)
 
-- decompor um problema em entrada, processamento, validação e saída;
-- reconhecer variáveis, condições, repetições e funções;
-- prever a execução de pequenos algoritmos antes de rodá-los;
-- aplicar os conceitos nos desafios do repositório;
-- usar testes para verificar comportamentos esperados e entradas inválidas.
+</div>
 
-## Pré-requisitos
+---
 
-- Python 3.11 ou superior instalado;
-- um terminal e um editor de texto;
-- disposição para executar, observar e modificar exemplos pequenos.
+## Seu mapa de aprendizagem
 
-Não é necessário conhecimento prévio de programação.
+| Etapa | Pergunta central | Página | Sinal visual |
+|---:|---|---|---|
+| **01** | Como transformar um problema em passos executáveis? | [Lógica de Programação](Introducao-a-Logica-de-Programacao-com-Python) | 🔵 Fundamentos |
+| **02** | Como o programa escolhe um caminho? | [Estruturas Condicionais](Estruturas-Condicionais) | 🔴 Decisão |
+| **03** | Como repetir sem duplicar código? | [Estruturas de Repetição](Estruturas-de-Repeticao) | 🟡 Iteração |
+| **04** | Como organizar e reutilizar uma regra? | [Funções em Python](Funcoes-em-Python) | 🟢 Abstração |
 
-## Índice
+> [!TIP]
+> **Siga a ordem das cores.** Cada página reutiliza a mesma linguagem visual para reduzir a desorientação e destacar o tipo de raciocínio exigido.
 
-- [Introdução à Lógica de Programação com Python](Introducao-a-Logica-de-Programacao-com-Python)
-- [Estruturas Condicionais](Estruturas-Condicionais)
-- [Estruturas de Repetição](Estruturas-de-Repeticao)
-- [Funções em Python](Funcoes-em-Python)
+## O ciclo de estudo
 
-## Como usar esta Wiki
+```mermaid
+flowchart LR
+    A[1. Ler] --> B[2. Prever]
+    B --> C[3. Executar]
+    C --> D[4. Comparar]
+    D --> E[5. Modificar]
+    E --> F[6. Testar]
+    F --> G[7. Explicar]
+    G --> A
+```
 
-Comece pela introdução e avance na ordem do índice. Os exemplos completos ficam nas pastas `desafios/` e `exemplos/` do repositório principal.
+<table>
+<tr>
+<td width="33%" valign="top">
 
-1. Leia os objetivos da página.
-2. Analise os exemplos linha por linha.
-3. Preveja o resultado antes de executar.
-4. Modifique uma entrada ou regra por vez.
-5. Resolva a atividade proposta e escreva ao menos um teste.
+### 👁️ Antes de executar
+- identifique entradas;
+- marque a regra principal;
+- preveja a saída;
+- localize possíveis erros.
 
-## Exemplo inicial comentado
+</td>
+<td width="33%" valign="top">
+
+### ▶️ Durante a execução
+- altere uma variável por vez;
+- observe mensagens e traceback;
+- acompanhe o estado;
+- compare previsto × observado.
+
+</td>
+<td width="33%" valign="top">
+
+### ✅ Depois de executar
+- explique o resultado;
+- teste limites;
+- provoque um erro válido;
+- registre o que mudou.
+
+</td>
+</tr>
+</table>
+
+## Objetivos da Wiki
+
+Ao concluir a trilha, você deverá ser capaz de:
+
+- decompor problemas em **entrada, processamento, validação e saída**;
+- reconhecer quando usar condições, repetições e funções;
+- prever o fluxo de pequenos algoritmos;
+- separar regras de negócio da interface de terminal;
+- testar casos normais, valores de fronteira e entradas inválidas;
+- explicar o comportamento do código com suas próprias palavras.
+
+> [!NOTE]
+> A Wiki é orientada por literatura publicada em educação em computação, mas não afirma eficácia experimental própria. O que o projeto verifica diretamente é o comportamento do software por meio de testes, cobertura, lint, tipagem e CI.
+
+## Diagnóstico rápido
+
+Marque mentalmente o que você já consegue fazer:
+
+- [ ] explicar a diferença entre valor, variável e tipo;
+- [ ] prever qual bloco de um `if` será executado;
+- [ ] rastrear o valor de uma variável dentro de um laço;
+- [ ] distinguir `return` de `print`;
+- [ ] criar um teste para um valor de fronteira;
+- [ ] interpretar uma mensagem de erro simples.
+
+Se marcou menos de três itens, comece em [Lógica de Programação](Introducao-a-Logica-de-Programacao-com-Python).
+
+## Primeiro experimento
 
 ```python
-nome = "Ana"  # Armazena um texto em uma variável.
+nome = "Ana"
 
-if nome:  # Uma string não vazia é avaliada como verdadeira.
+if nome:
     print(f"Olá, {nome}!")
 ```
 
-### Leitura passo a passo
+| Elemento | O que observar |
+|---|---|
+| `nome = "Ana"` | uma variável recebe um texto |
+| `if nome` | uma string não vazia é avaliada como verdadeira |
+| `f"Olá, {nome}!"` | o valor é inserido na mensagem |
+| `print(...)` | a saída torna o comportamento observável |
 
-1. a variável `nome` recebe uma string;
-2. `if nome` verifica se a string não está vazia;
-3. a f-string insere o valor na mensagem;
-4. `print` produz a saída observável no terminal.
+> [!IMPORTANT]
+> Antes de executar, escreva a saída esperada. Depois altere `nome` para uma string vazia e explique por que nada é impresso.
 
-## Aplicação prática
+## Prática conectada ao repositório
 
-Use esta Wiki junto com o [repositório principal](https://github.com/matheusflorindo32/dio-estudos-logica-python). Cada página indica um desafio executável e conceitos que podem ser verificados pelos testes automatizados.
+1. clone o [repositório principal](https://github.com/matheusflorindo32/dio-estudos-logica-python);
+2. abra a página correspondente ao desafio;
+3. execute o arquivo em `desafios/`;
+4. localize os testes relacionados em `tests/`;
+5. modifique uma regra e observe quais testes falham;
+6. restaure o comportamento e confirme o CI local.
 
-## Erros comuns de estudo
+## Erros de estudo que reduzem a aprendizagem
 
-- copiar um exemplo sem prever seu resultado;
-- alterar várias partes do código ao mesmo tempo;
-- ignorar mensagens de erro em vez de interpretá-las;
-- testar somente o caso de sucesso;
-- avançar sem conseguir explicar como as variáveis mudam.
+> [!WARNING]
+> - copiar código sem prever o resultado;
+> - alterar muitas linhas ao mesmo tempo;
+> - ignorar mensagens de erro;
+> - testar apenas o caso de sucesso;
+> - decorar sintaxe sem acompanhar o estado das variáveis.
 
-## Boas práticas de aprendizagem
+## Desafio de abertura
 
-- execute um exemplo antes e depois de modificá-lo;
-- altere apenas uma variável por tentativa;
-- anote a saída prevista antes de observar a saída real;
-- trate mensagens de erro como evidência para investigação;
-- valide também limites e entradas inválidas.
+Escolha um problema cotidiano simples — desconto, média, classificação ou contagem — e registre:
 
-## Exercício guiado
+| Campo | Sua resposta |
+|---|---|
+| Entrada | quais dados entram? |
+| Processamento | qual cálculo ou regra ocorre? |
+| Validação | o que deve ser rejeitado? |
+| Saída | qual resultado será devolvido? |
+| Estrutura | condição, repetição ou função? |
+| Teste de fronteira | qual valor fica exatamente no limite? |
 
-Escolha uma página do índice, execute o desafio correspondente e registre: entrada utilizada, resultado previsto, resultado observado e uma mudança que você conseguiu explicar.
-
-## Exercício independente
-
-Escolha um problema cotidiano simples, descreva suas entradas, regras e saídas e indique se cada regra exige uma condição, uma repetição ou uma função. Depois implemente a menor versão executável e escreva um teste para um caso de fronteira.
-
-## Referências
+## Referência central
 
 ROBINS, Anthony; ROUNTREE, Janet; ROUNTREE, Nathan. Learning and teaching programming: a review and discussion. *Computer Science Education*, v. 13, n. 2, p. 137-172, 2003. DOI: <https://doi.org/10.1076/csed.13.2.137.14200>.
 
-[Voltar para Home](Home)
+---
+
+<div align="center">
+
+**Próxima etapa:** [Introdução à Lógica de Programação com Python →](Introducao-a-Logica-de-Programacao-com-Python)
+
+</div>

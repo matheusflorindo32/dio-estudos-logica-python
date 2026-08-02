@@ -1,132 +1,154 @@
-# Introdução à Lógica de Programação com Python
+<div align="center">
 
-## Objetivos de aprendizagem
+<img src="https://raw.githubusercontent.com/matheusflorindo32/dio-estudos-logica-python/main/docs/assets/wiki/wiki-introducao.svg" alt="Módulo visual de introdução à lógica de programação" width="100%">
 
-Ao concluir esta página, você deverá ser capaz de:
+[← Home](Home) · [Condicionais →](Estruturas-Condicionais)
 
-- explicar o que são algoritmo, programa e lógica de programação;
-- identificar entradas, processamento e saídas de um problema;
-- reconhecer variáveis, tipos de dados, operadores e expressões;
-- relacionar condições, repetições e funções à construção de algoritmos;
-- executar um pequeno programa em Python e analisar seu comportamento.
+</div>
 
-## Pré-requisitos
+---
 
-- Python 3.11 ou superior instalado;
-- acesso a um terminal e a um editor;
-- capacidade de criar e salvar um arquivo de texto.
+## O que você vai aprender
 
-Não é necessário ter programado anteriormente.
+| Competência | Evidência de aprendizagem |
+|---|---|
+| Decompor problemas | identifica entrada, processamento, validação e saída |
+| Representar dados | escolhe variáveis e tipos coerentes |
+| Construir expressões | combina operadores com intenção clara |
+| Ler fluxo | prevê o resultado antes de executar |
+| Verificar comportamento | testa casos normais, limites e erros |
 
-## 1. Algoritmo, programa e pensamento computacional
+> [!TIP]
+> **Não tente memorizar tudo.** Concentre-se em explicar o que muda em cada linha e por que o resultado aparece.
 
-Um **algoritmo** é uma sequência finita, ordenada e não ambígua de instruções para resolver um problema. Um **programa** é a implementação de um ou mais algoritmos em uma linguagem que o computador consegue interpretar ou executar.
+## 1. Da situação ao algoritmo
 
-A programação também desenvolve habilidades associadas ao **pensamento computacional**, como decomposição de problemas, reconhecimento de padrões, abstração e elaboração de procedimentos. Wing (2006) destaca que o pensamento computacional não se limita ao uso de computadores: ele é uma forma de organizar problemas e soluções de modo que possam ser representados e executados sistematicamente.
+Um **algoritmo** é uma sequência finita e não ambígua de passos. Um **programa** é a implementação desses passos em uma linguagem executável.
 
-Na educação básica, a revisão de Lye e Koh (2014) encontrou evidências de que atividades de programação podem apoiar o pensamento computacional quando são acompanhadas por estratégias pedagógicas e ferramentas adequadas.
+```mermaid
+flowchart LR
+    A[Problema] --> B[Decomposição]
+    B --> C[Algoritmo]
+    C --> D[Código Python]
+    D --> E[Teste]
+    E --> F[Resultado verificável]
+```
 
-A literatura sobre ensino de programação mostra que iniciantes não aprendem apenas memorizando comandos. Eles precisam construir modelos mentais sobre como o programa executa cada instrução e como os dados mudam ao longo do tempo (ROBINS; ROUNTREE; ROUNTREE, 2003).
+### Modelo mental essencial
 
-## 2. Decompondo um problema
+<table>
+<tr>
+<td width="25%" valign="top">
 
-Antes de escrever código, organize o problema em quatro perguntas:
+### 1. Entrada
+Dados recebidos pelo programa.
 
-1. **Entrada:** quais dados serão recebidos?
-2. **Processamento:** quais regras ou cálculos serão aplicados?
-3. **Saída:** qual resultado deverá ser apresentado?
-4. **Validação:** quais valores são permitidos e quais erros podem ocorrer?
+</td>
+<td width="25%" valign="top">
 
-### Exemplo: calcular a média de duas notas
+### 2. Processamento
+Cálculo ou transformação.
+
+</td>
+<td width="25%" valign="top">
+
+### 3. Validação
+Regras que rejeitam dados inválidos.
+
+</td>
+<td width="25%" valign="top">
+
+### 4. Saída
+Resultado devolvido ou exibido.
+
+</td>
+</tr>
+</table>
+
+### Exemplo: média de duas notas
 
 ```text
-Entrada: nota 1 e nota 2
-Processamento: (nota 1 + nota 2) / 2
+Entrada: nota_1 e nota_2
+Processamento: (nota_1 + nota_2) / 2
+Validação: aceitar somente valores entre 0 e 10
 Saída: média calculada
-Validação: aceitar apenas notas entre 0 e 10
 ```
 
-Essa decomposição reduz a carga de memória durante a resolução do problema e facilita a aprendizagem progressiva, princípio coerente com estudos sobre carga cognitiva (SWELLER, 1988).
+> [!IMPORTANT]
+> A validação não é detalhe. Sem ela, o programa pode produzir uma resposta tecnicamente executável, mas semanticamente incorreta.
 
-## 3. Variáveis e tipos de dados
-
-Variáveis associam nomes a valores utilizados pelo programa. Em Python, o tipo é determinado dinamicamente a partir do valor atribuído.
+## 2. Variáveis e tipos
 
 ```python
-nome = "Ana"  # str: texto
-idade = 20  # int: número inteiro
-altura = 1.68  # float: número decimal
-estudante = True  # bool: verdadeiro ou falso
+nome = "Ana"          # str
+idade = 20            # int
+altura = 1.68         # float
+estudante = True      # bool
 ```
 
-Escolha nomes que expressem o significado do dado. `media_final` comunica melhor a intenção do que `m`.
+| Tipo | Representa | Exemplo |
+|---|---|---|
+| `str` | texto | `"Python"` |
+| `int` | número inteiro | `20` |
+| `float` | número decimal | `1.68` |
+| `bool` | verdadeiro ou falso | `True` |
 
-### Atividade guiada
+> [!NOTE]
+> Em Python, o tipo é associado ao valor. Nomes claros como `media_final` comunicam melhor a intenção do que nomes vagos como `m`.
 
-Analise o código:
+### Microatividade
 
 ```python
 nome = "Carlos"
 idade = 19
 maior_de_idade = idade >= 18
-
-print(nome)
-print(maior_de_idade)
 ```
 
-Responda:
+Antes de executar, responda:
 
-- Qual é o tipo de `nome`?
-- Qual é o tipo de `idade`?
-- Por que `maior_de_idade` recebe `True`?
+1. qual é o tipo de `nome`?
+2. qual é o tipo de `idade`?
+3. qual expressão produz o valor de `maior_de_idade`?
+4. o resultado será `True` ou `False`?
 
-## 4. Operadores e expressões
+## 3. Operadores e expressões
 
-Os operadores mais usados no início da aprendizagem são:
-
-- aritméticos: `+`, `-`, `*`, `/`, `//`, `%` e `**`;
-- comparação: `==`, `!=`, `<`, `<=`, `>` e `>=`;
-- lógicos: `and`, `or` e `not`.
-
-Uma **expressão** combina valores, variáveis e operadores para produzir um resultado.
+| Grupo | Operadores | Pergunta que respondem |
+|---|---|---|
+| Aritméticos | `+ - * / // % **` | qual cálculo será feito? |
+| Comparação | `== != < <= > >=` | a relação é verdadeira? |
+| Lógicos | `and or not` | como combinar condições? |
 
 ```python
 media = (8.0 + 7.0) / 2
 aprovado = media >= 7
 ```
 
-## 5. Estruturas fundamentais
+### Rastreamento visual
 
-### Condições
-
-Condições selecionam caminhos diferentes conforme uma expressão booleana:
-
-```python
-if media >= 7:
-    print("Aprovado")
-else:
-    print("Ainda não aprovado")
+```text
+8.0 + 7.0 = 15.0
+15.0 / 2 = 7.5
+7.5 >= 7 = True
 ```
 
-Veja [Estruturas Condicionais](Estruturas-Condicionais).
+## 4. As três estruturas que organizam o fluxo
 
-### Repetições
+| Estrutura | Função cognitiva | Exemplo |
+|---|---|---|
+| Condição | escolher | `if media >= 7:` |
+| Repetição | percorrer ou repetir | `for nota in notas:` |
+| Função | agrupar e reutilizar | `def calcular_media(...):` |
 
-Repetições executam um bloco várias vezes. `for` percorre elementos de um iterável; `while` repete enquanto uma condição permanecer verdadeira, conforme a referência oficial da linguagem Python (PYTHON SOFTWARE FOUNDATION, 2026a).
+- [Aprofundar condicionais](Estruturas-Condicionais)
+- [Aprofundar repetições](Estruturas-de-Repeticao)
+- [Aprofundar funções](Funcoes-em-Python)
 
-Veja [Estruturas de Repetição](Estruturas-de-Repeticao).
-
-### Funções
-
-Funções agrupam uma responsabilidade reutilizável. Parâmetros recebem dados e `return` devolve um resultado.
-
-Veja [Funções em Python](Funcoes-em-Python).
-
-## 6. Primeiro programa completo
+## 5. Primeiro programa completo
 
 ```python
 def calcular_media(nota_1: float, nota_2: float) -> float:
-    """Calcula a média aritmética de duas notas válidas."""
+    """Calcula a média de duas notas válidas."""
     if not 0 <= nota_1 <= 10 or not 0 <= nota_2 <= 10:
         raise ValueError("As notas devem estar entre 0 e 10.")
     return (nota_1 + nota_2) / 2
@@ -136,68 +158,86 @@ media = calcular_media(8.0, 7.0)
 print(f"Média: {media:.1f}")
 ```
 
-### Leitura passo a passo
+### Leitura em camadas
 
-1. A função recebe duas notas.
-2. A condição rejeita valores fora do intervalo permitido.
-3. O cálculo produz a média.
-4. `return` devolve o resultado.
-5. `print` apresenta a média com uma casa decimal.
+| Camada | O que acontece |
+|---|---|
+| Assinatura | recebe duas notas e promete devolver `float` |
+| Docstring | registra o propósito |
+| Validação | rejeita valores fora de `0..10` |
+| Processamento | calcula a média |
+| Retorno | entrega o resultado |
+| Interface | apresenta a saída formatada |
 
-## 7. Estratégia de estudo recomendada
+> [!TIP]
+> Cubra o código e tente reconstruir cada camada com suas próprias palavras.
 
-Para cada conceito:
+## 6. Estratégia 3×3 de estudo
 
-1. leia o exemplo;
-2. preveja o resultado antes de executar;
-3. execute o código;
-4. altere um valor por vez;
-5. explique o comportamento com suas próprias palavras;
-6. escreva um teste simples.
+### Antes
+1. identifique os dados;
+2. preveja a saída;
+3. marque o possível erro.
 
-A revisão de Robins, Rountree e Rountree (2003) indica que aprender programação envolve desenvolver conhecimento sintático, conceitual e estratégico. Por isso, apenas copiar códigos é insuficiente: é necessário prever, testar, explicar e corrigir.
+### Durante
+1. execute o exemplo original;
+2. altere um valor;
+3. compare o comportamento.
 
-## 8. Boas práticas iniciais
+### Depois
+1. explique a mudança;
+2. teste um limite;
+3. escreva um teste automatizado.
 
-- use nomes que expressem o propósito de cada dado;
-- valide entradas antes de calcular resultados;
-- mantenha cálculo e apresentação em etapas distinguíveis;
-- execute casos normais, limites e valores inválidos;
-- leia o traceback começando pela última mensagem do erro.
+## 7. Erros comuns
 
-## 9. Erros comuns
+> [!WARNING]
+> - começar a programar sem definir entrada e saída;
+> - confundir texto numérico com `int` ou `float`;
+> - usar nomes que escondem o significado;
+> - ignorar precedência de operadores;
+> - testar somente um valor conveniente.
 
-- começar a codificar sem definir entrada e saída;
-- escolher nomes que não revelam o significado dos dados;
-- confundir texto numérico com valores `int` ou `float`;
-- ignorar precedência de operadores em expressões;
-- testar apenas um valor conveniente.
-
-## 10. Exercício guiado
+## 8. Exercício guiado
 
 Crie um programa que:
 
-- solicite o nome do estudante;
+- receba o nome de um estudante;
 - receba duas notas;
+- rejeite valores fora de `0..10`;
 - calcule a média;
-- informe se o estudante foi aprovado;
-- rejeite notas menores que 0 ou maiores que 10.
+- informe o resultado.
 
-Depois compare sua solução com os arquivos das pastas `desafios/` e `exemplos/`.
+### Casos mínimos de teste
 
-## 11. Exercício independente
+| Entrada | Resultado esperado |
+|---|---|
+| `7` e `8` | média `7.5` |
+| `0` e `10` | média `5.0` |
+| `-1` e `5` | erro |
+| `7` e `11` | erro |
 
-Modele um conversor de tempo que receba uma quantidade total de minutos e informe horas e minutos restantes. Antes de programar, registre entrada, processamento, saída e duas validações. Implemente a solução e teste os valores `0`, `59`, `60` e `125`.
+## 9. Desafio independente
 
-## 12. Ligação com o repositório
+Modele um conversor que receba minutos e devolva horas e minutos restantes.
 
-Execute `python desafios/01_variaveis.py` e localize em `tests/test_variaveis.py` as verificações correspondentes. Compare as escolhas de nomes, tipos e formatação com as boas práticas desta página.
+Teste: `0`, `59`, `60` e `125`.
+
+## 10. Prática no projeto
+
+```bash
+python desafios/01_variaveis.py
+```
+
+Depois localize os testes correspondentes e responda:
+
+- quais entradas são aceitas?
+- quais valores de fronteira são testados?
+- qual comportamento falharia se a validação fosse removida?
 
 ## Referências
 
 LYE, Sze Yee; KOH, Joyce Hwee Ling. Review on teaching and learning of computational thinking through programming: what is next for K-12? *Computers in Human Behavior*, v. 41, p. 51-61, 2014. DOI: <https://doi.org/10.1016/j.chb.2014.09.012>.
-
-PYTHON SOFTWARE FOUNDATION. *The Python language reference: compound statements*. Versão 3.14. [S. l.], 2026a. Disponível em: <https://docs.python.org/3.14/reference/compound_stmts.html>. Acesso em: 2 ago. 2026.
 
 ROBINS, Anthony; ROUNTREE, Janet; ROUNTREE, Nathan. Learning and teaching programming: a review and discussion. *Computer Science Education*, v. 13, n. 2, p. 137-172, 2003. DOI: <https://doi.org/10.1076/csed.13.2.137.14200>.
 
@@ -205,4 +245,12 @@ SWELLER, John. Cognitive load during problem solving: effects on learning. *Cogn
 
 WING, Jeannette M. Computational thinking. *Communications of the ACM*, v. 49, n. 3, p. 33-35, 2006. DOI: <https://doi.org/10.1145/1118178.1118215>.
 
-[Voltar para Home](Home)
+PYTHON SOFTWARE FOUNDATION. *Python 3.14 documentation*. Disponível em: <https://docs.python.org/3.14/>. Acesso em: 2 ago. 2026.
+
+---
+
+<div align="center">
+
+[← Home](Home) · **Próxima etapa:** [Estruturas Condicionais →](Estruturas-Condicionais)
+
+</div>
