@@ -155,5 +155,5 @@ Distribuído sob a licença MIT. Consulte [LICENSE](LICENSE).
 - [x] templates de Issue e Pull Request;
 - [x] licença MIT;
 - [x] Wiki preparada no diretório `wiki/`;
-- [ ] Issue, Pull Request, merge, Actions e Wiki confirmados no GitHub — consulte as evidências atualizadas.
-
+- [x] Issue, Pull Request, merge e GitHub Actions confirmados;
+- [ ] Wiki publicada — a inicialização manual ainda é necessária; consulte as evidências.
