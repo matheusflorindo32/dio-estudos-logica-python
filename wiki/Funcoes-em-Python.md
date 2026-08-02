@@ -1,38 +1,43 @@
-# Funções em Python
+<div align="center">
 
-## Objetivos de aprendizagem
+<img src="https://raw.githubusercontent.com/matheusflorindo32/dio-estudos-logica-python/main/docs/assets/wiki/wiki-funcoes.svg" alt="Módulo visual de funções em Python" width="100%">
 
-Ao concluir esta página, você deverá ser capaz de:
+[← Repetições](Estruturas-de-Repeticao) · [Home](Home)
 
-- explicar por que funções favorecem reutilização e manutenção;
-- definir funções com parâmetros e retorno;
-- usar type hints e docstrings;
-- separar regras de negócio da interface de entrada e saída;
-- escrever funções pequenas, previsíveis e testáveis.
+</div>
 
-## Pré-requisitos
+---
 
-- variáveis, condições, repetições e tipos básicos;
-- execução de módulos Python pelo terminal;
-- noções de entrada, processamento, validação e saída.
+## O que você vai dominar
 
-## 1. O que é uma função?
+| Competência | Evidência prática |
+|---|---|
+| Criar contratos | define parâmetros, retorno e erros |
+| Reutilizar lógica | chama a mesma regra em contextos diferentes |
+| Separar responsabilidades | distingue regra de negócio de terminal |
+| Tornar código testável | usa entradas e retornos previsíveis |
+| Comunicar intenção | aplica nomes, type hints e docstrings |
 
-Uma **função** é um bloco nomeado de instruções criado para executar uma responsabilidade específica. Em Python, funções são definidas com `def`, podem receber parâmetros e podem devolver resultados com `return` (PYTHON SOFTWARE FOUNDATION, 2026b).
+> [!TIP]
+> Uma boa função responde a uma pergunta clara e faz uma coisa principal bem definida.
+
+## 1. O fluxo de uma função
+
+```mermaid
+flowchart LR
+    A[Argumentos] --> B[Parâmetros]
+    B --> C[Validação]
+    C --> D[Processamento]
+    D --> E[return]
+    E --> F[Resultado reutilizável]
+```
 
 ```python
 def saudacao(nome: str) -> str:
     return f"Olá, {nome}!"
 ```
 
-Uso:
-
-```python
-mensagem = saudacao("Ana")
-print(mensagem)
-```
-
-## 2. Componentes de uma função
+## 2. Anatomia de uma função
 
 ```python
 def calcular_area(largura: float, altura: float) -> float:
@@ -42,69 +47,63 @@ def calcular_area(largura: float, altura: float) -> float:
     return largura * altura
 ```
 
-| Elemento | Função |
+| Elemento | Papel |
 |---|---|
 | `def` | inicia a definição |
-| `calcular_area` | nome da função |
+| `calcular_area` | nome comunica a intenção |
 | `largura`, `altura` | parâmetros de entrada |
-| `float` | anotação de tipo |
-| docstring | explica o contrato da função |
-| `raise` | sinaliza entrada inválida |
+| `float` | tipo esperado |
+| docstring | explica o contrato |
+| `raise` | rejeita estado inválido |
 | `return` | devolve o resultado |
 
-### Leitura passo a passo
-
-1. a assinatura declara nome, parâmetros e tipo de retorno;
-2. a docstring registra o contrato esperado;
-3. a condição protege o domínio válido;
-4. `raise` encerra a chamada com um erro útil quando necessário;
-5. `return` entrega um valor reutilizável no caminho de sucesso.
-
-## 3. Parâmetros e argumentos
-
-**Parâmetros** aparecem na definição da função. **Argumentos** são os valores fornecidos na chamada.
+## 3. Parâmetros × argumentos
 
 ```python
 def somar(a: float, b: float) -> float:
     return a + b
 
-
 resultado = somar(2, 3)
 ```
 
-Nesse exemplo, `a` e `b` são parâmetros; `2` e `3` são argumentos.
+- `a` e `b` são **parâmetros**;
+- `2` e `3` são **argumentos**.
 
 ## 4. `return` não é `print`
 
-`print()` exibe algo na tela. `return` devolve um valor para quem chamou a função.
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### Exibe, mas não devolve
 
 ```python
-# Menos reutilizável
 def mostrar_dobro(numero: float) -> None:
     print(numero * 2)
+```
 
+Mais acoplada à interface.
 
-# Mais reutilizável e testável
+</td>
+<td width="50%" valign="top">
+
+### Devolve e pode ser reutilizada
+
+```python
 def calcular_dobro(numero: float) -> float:
     return numero * 2
 ```
 
-Com `return`, o resultado pode ser testado, armazenado, combinado com outros cálculos ou apresentado por qualquer interface.
+Mais simples de testar e combinar.
 
-## 5. Type hints
+</td>
+</tr>
+</table>
 
-Type hints documentam os tipos esperados, mas não impedem automaticamente que valores de outros tipos sejam passados durante a execução.
+> [!IMPORTANT]
+> `print()` produz uma saída visual. `return` entrega um valor para o restante do programa.
 
-```python
-def calcular_media(notas: list[float]) -> float:
-    return sum(notas) / len(notas)
-```
-
-Eles melhoram a legibilidade e ajudam ferramentas de análise estática, editores e revisores humanos.
-
-## 6. Docstrings
-
-Uma docstring descreve o propósito e o contrato da função.
+## 5. Type hints e docstrings
 
 ```python
 def dividir(dividendo: float, divisor: float) -> float:
@@ -125,9 +124,16 @@ def dividir(dividendo: float, divisor: float) -> float:
     return dividendo / divisor
 ```
 
-## 7. Funções pequenas e responsabilidade única
+| Recurso | Benefício |
+|---|---|
+| type hints | tornam o contrato visível para pessoas e ferramentas |
+| docstring | registra propósito, entradas, retorno e erros |
+| exceção específica | comunica por que a chamada falhou |
 
-Uma função deve, preferencialmente, representar uma responsabilidade clara. Dividir um problema em funções menores reduz a complexidade de cada etapa e facilita compreensão, teste e manutenção.
+> [!NOTE]
+> Type hints ajudam o mypy e o editor, mas não impedem automaticamente valores incorretos em tempo de execução.
+
+## 6. Responsabilidade única
 
 ```python
 def validar_nota(nota: float) -> None:
@@ -145,9 +151,15 @@ def classificar_media(media: float) -> str:
     return "Aprovado" if media >= 7 else "Reprovado"
 ```
 
-## 8. Separando lógica e interface
+### O ganho visual da decomposição
 
-Misturar `input()`, cálculo e `print()` na mesma função dificulta testes automatizados. Prefira separar a lógica de negócio da interface.
+```text
+validar dados → calcular resultado → classificar resultado
+```
+
+Cada etapa pode ser lida, testada e modificada separadamente.
+
+## 7. Separando lógica e interface
 
 ```python
 def converter_celsius_para_fahrenheit(celsius: float) -> float:
@@ -164,27 +176,36 @@ if __name__ == "__main__":
     main()
 ```
 
-A função de conversão pode ser testada sem simular teclado ou capturar saída do terminal.
+| Camada | Responsabilidade |
+|---|---|
+| regra | calcular a conversão |
+| interface | ler e apresentar dados |
+| teste | verificar resultados sem teclado |
 
-## 9. Funções puras e efeitos colaterais
-
-Uma função é considerada **pura** quando, para as mesmas entradas, produz sempre a mesma saída e não altera estado externo.
+## 8. Funções puras
 
 ```python
 def aplicar_desconto(preco: float, percentual: float) -> float:
     return preco * (1 - percentual / 100)
 ```
 
-Funções puras tendem a ser mais previsíveis e simples de testar. Nem toda função precisa ser pura, mas separar cálculos de efeitos colaterais costuma melhorar o projeto.
+Uma função pura tende a:
 
-## 10. Testes de funções
+- produzir a mesma saída para as mesmas entradas;
+- não modificar estado externo;
+- ser mais previsível;
+- exigir testes mais simples.
+
+## 9. Testando o contrato
+
+### Caminho de sucesso
 
 ```python
 def test_calcular_area() -> None:
     assert calcular_area(3, 4) == 12
 ```
 
-Também é importante testar entradas inválidas:
+### Caminho de erro
 
 ```python
 import pytest
@@ -195,59 +216,86 @@ def test_calcular_area_rejeita_dimensao_invalida() -> None:
         calcular_area(0, 4)
 ```
 
-A revisão de Robins, Rountree e Rountree (2003) mostra que iniciantes precisam integrar conhecimento sintático, modelos mentais e estratégias de resolução. Funções pequenas e exemplos testáveis ajudam a tornar essas relações explícitas.
+> [!TIP]
+> Teste o que a função promete devolver e também o que promete rejeitar.
 
-## 11. Erros comuns
+## 10. Erros comuns
 
-- esquecer de usar `return`;
-- misturar entrada, regra e saída na mesma função;
-- criar funções longas com várias responsabilidades;
-- usar nomes vagos como `funcao1` ou `processar_coisa`;
-- não validar parâmetros;
-- depender de variáveis globais sem necessidade;
-- escrever docstrings que apenas repetem o nome da função.
+> [!WARNING]
+> - esquecer de usar `return`;
+> - misturar entrada, regra e saída;
+> - criar funções longas com várias responsabilidades;
+> - usar nomes vagos;
+> - depender de variáveis globais sem necessidade;
+> - escrever docstrings que apenas repetem o nome;
+> - silenciar erros em vez de validá-los.
 
-## 12. Atividade guiada
+## 11. Atividade guiada
 
-Implemente uma função chamada `calcular_imc` que:
+Implemente `calcular_imc`:
 
-- receba peso em quilogramas e altura em metros;
-- rejeite valores menores ou iguais a zero;
-- retorne o IMC calculado;
-- possua type hints e docstring;
-- seja acompanhada por testes para casos válidos e inválidos.
+- recebe peso em quilogramas;
+- recebe altura em metros;
+- rejeita valores menores ou iguais a zero;
+- retorna o IMC;
+- possui type hints e docstring;
+- inclui testes válidos e inválidos.
 
-## 13. Boas práticas
+## 12. Desafio independente
 
-- escolha um nome que descreva a ação ou o resultado;
-- mantenha uma responsabilidade principal por função;
-- documente parâmetros, retorno e erros que fazem parte do contrato;
-- evite estado global quando os dados podem ser parâmetros;
-- faça a lógica retornar valores e deixe a interface apresentá-los.
+Crie três funções separadas para:
 
-## 14. Exercício independente
+1. validar um preço;
+2. calcular desconto percentual;
+3. formatar o valor final.
 
-Crie funções separadas para validar um preço, calcular um desconto percentual e formatar o valor final. Escreva type hints, docstrings e testes para desconto zero, desconto máximo permitido e entradas inválidas.
+Teste desconto zero, desconto máximo e entradas inválidas.
 
-## 15. Prática no repositório
+## 13. Checklist de uma função de alta qualidade
 
-Leia:
+- [ ] nome descreve a intenção;
+- [ ] possui uma responsabilidade principal;
+- [ ] entradas estão tipadas;
+- [ ] retorno está tipado;
+- [ ] contrato está documentado;
+- [ ] entradas inválidas são tratadas;
+- [ ] regra não depende de `input()`;
+- [ ] caso de sucesso possui teste;
+- [ ] caso de erro possui teste.
+
+## 14. Prática no projeto
+
+Leia e compare:
 
 ```text
 desafios/04_funcoes.py
 exemplos/calculadora.py
 exemplos/organizador_estudos.py
 exemplos/verificador_aprovacao.py
+tests/
 ```
 
-Depois compare as funções com os testes existentes em `tests/`.
+Pergunte para cada função:
+
+- qual é sua entrada?
+- qual é sua saída?
+- qual erro pode ocorrer?
+- como o teste comprova o contrato?
 
 ## Referências
-
-PYTHON SOFTWARE FOUNDATION. *The Python tutorial: defining functions*. Versão 3.14. [S. l.], 2026b. Disponível em: <https://docs.python.org/3.14/tutorial/controlflow.html#defining-functions>. Acesso em: 2 ago. 2026.
 
 ROBINS, Anthony; ROUNTREE, Janet; ROUNTREE, Nathan. Learning and teaching programming: a review and discussion. *Computer Science Education*, v. 13, n. 2, p. 137-172, 2003. DOI: <https://doi.org/10.1076/csed.13.2.137.14200>.
 
 SWELLER, John. Cognitive load during problem solving: effects on learning. *Cognitive Science*, v. 12, n. 2, p. 257-285, 1988. DOI: <https://doi.org/10.1207/s15516709cog1202_4>.
 
-[Voltar para Home](Home)
+PYTHON SOFTWARE FOUNDATION. *The Python tutorial: defining functions*. Versão 3.14. Disponível em: <https://docs.python.org/3.14/tutorial/controlflow.html#defining-functions>. Acesso em: 2 ago. 2026.
+
+---
+
+<div align="center">
+
+[← Repetições](Estruturas-de-Repeticao) · [Home](Home) · [Abrir o repositório](https://github.com/matheusflorindo32/dio-estudos-logica-python)
+
+**Você concluiu a trilha principal da Wiki.**
+
+</div>
