@@ -7,9 +7,11 @@
 | Item | Evidência ou status atual |
 |---|---|
 | Repositório público | <https://github.com/matheusflorindo32/dio-estudos-logica-python> |
-| Issue principal | [#5 — Evolução internacional](https://github.com/matheusflorindo32/dio-estudos-logica-python/issues/5) |
+| Issue principal | [#5 — Evolução internacional](https://github.com/matheusflorindo32/dio-estudos-logica-python/issues/5) — encerrada |
 | Branch | `feature/international-quality-upgrade` |
-| Pull Request | [#6 — feat: eleva projeto a padrão internacional de qualidade](https://github.com/matheusflorindo32/dio-estudos-logica-python/pull/6) — aberto |
+| Pull Request | [#6 — feat: eleva projeto a padrão internacional de qualidade](https://github.com/matheusflorindo32/dio-estudos-logica-python/pull/6) — mesclado |
+| Commit de merge | `dbcde98f9a002d7c416b1fc22cc36708e2939a2d` |
+| Data do merge | 2 ago. 2026, 14:48:32 UTC |
 | Branch principal | `main` |
 | README internacional | [README.md](../README.md) |
 | README em português | [README.pt-BR.md](../README.pt-BR.md) |
@@ -35,7 +37,7 @@ Linha de base anterior à evolução: 39 testes aprovados e 41% de cobertura com
 
 ## Integração contínua
 
-O workflow possui um job `Quality` no Python 3.14 e uma matriz independente para Python 3.11, 3.12, 3.13 e 3.14. Os cinco jobs foram aprovados no [evento de push](https://github.com/matheusflorindo32/dio-estudos-logica-python/actions/runs/30752831554) e no [evento do Pull Request](https://github.com/matheusflorindo32/dio-estudos-logica-python/actions/runs/30752833102), ambos para o commit `7e744da`.
+O workflow possui um job `Quality` no Python 3.14 e uma matriz independente para Python 3.11, 3.12, 3.13 e 3.14. Os cinco jobs foram aprovados no HEAD final do Pull Request, nos eventos de [push](https://github.com/matheusflorindo32/dio-estudos-logica-python/actions/runs/30752882578) e de [Pull Request](https://github.com/matheusflorindo32/dio-estudos-logica-python/actions/runs/30752884359), para o commit `8eddcbb`. A [execução pós-merge na main](https://github.com/matheusflorindo32/dio-estudos-logica-python/actions/runs/30752927391) também aprovou os cinco jobs para `dbcde98`.
 
 | Job | Resultado no Pull Request |
 |---|---|
@@ -103,5 +105,5 @@ A entrega inicial permanece rastreável nos Pull Requests [#2](https://github.co
 - [x] Wiki oficial sincronizada e cinco páginas verificadas;
 - [x] Pull Request #6 aberto e ligado à Issue #5;
 - [x] CI aprovado em todos os cinco jobs no push e no Pull Request;
-- [ ] Pull Request mesclado e commit de merge registrado;
-- [ ] Issue #5 encerrada.
+- [x] Pull Request mesclado e commit de merge registrado;
+- [x] Issue #5 encerrada automaticamente por `Closes #5`.
