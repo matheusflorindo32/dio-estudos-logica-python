@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">Python Logic Lab</title>
+  <desc id="desc">Banner do projeto com trilha de aprendizagem, testes e qualidade de software.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#08111f"/>
+      <stop offset="0.55" stop-color="#102a43"/>
+      <stop offset="1" stop-color="#0f766e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#60a5fa"/>
+      <stop offset="1" stop-color="#34d399"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="420" rx="28" fill="url(#bg)"/>
+  <circle cx="1070" cy="70" r="170" fill="#38bdf8" opacity="0.08"/>
+  <circle cx="1110" cy="360" r="220" fill="#34d399" opacity="0.07"/>
+  <path d="M0 338 C220 290 330 390 560 338 S910 280 1200 336 V420 H0 Z" fill="#ffffff" opacity="0.035"/>
+
+  <g transform="translate(70 62)">
+    <text x="0" y="52" fill="#f8fafc" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="58" font-weight="800" letter-spacing="-1.5">Python Logic Lab</text>
+    <rect x="0" y="78" width="470" height="6" rx="3" fill="url(#accent)"/>
+    <text x="0" y="126" fill="#cbd5e1" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="24" font-weight="600">Evidence-informed programming logic</text>
+    <text x="0" y="160" fill="#94a3b8" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="19">Progressive learning • executable examples • verifiable quality</text>
+
+    <g transform="translate(0 214)" font-family="Segoe UI, Inter, Arial, sans-serif">
+      <g>
+        <rect width="170" height="74" rx="16" fill="#ffffff" opacity="0.09" stroke="#93c5fd" stroke-opacity="0.35"/>
+        <text x="22" y="31" fill="#93c5fd" font-size="15" font-weight="700">LEARN</text>
+        <text x="22" y="55" fill="#f8fafc" font-size="18">6-stage path</text>
+      </g>
+      <g transform="translate(190 0)">
+        <rect width="170" height="74" rx="16" fill="#ffffff" opacity="0.09" stroke="#86efac" stroke-opacity="0.35"/>
+        <text x="22" y="31" fill="#86efac" font-size="15" font-weight="700">VERIFY</text>
+        <text x="22" y="55" fill="#f8fafc" font-size="18">76 tests</text>
+      </g>
+      <g transform="translate(380 0)">
+        <rect width="190" height="74" rx="16" fill="#ffffff" opacity="0.09" stroke="#fcd34d" stroke-opacity="0.35"/>
+        <text x="22" y="31" fill="#fcd34d" font-size="15" font-weight="700">ENGINEER</text>
+        <text x="22" y="55" fill="#f8fafc" font-size="18">Ruff • mypy • CI</text>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(805 82)" filter="url(#shadow)" font-family="Consolas, SFMono-Regular, Menlo, monospace">
+    <rect width="320" height="250" rx="22" fill="#07101d" stroke="#334155"/>
+    <circle cx="28" cy="26" r="6" fill="#fb7185"/>
+    <circle cx="48" cy="26" r="6" fill="#fbbf24"/>
+    <circle cx="68" cy="26" r="6" fill="#4ade80"/>
+    <text x="26" y="70" fill="#60a5fa" font-size="17">def</text>
+    <text x="63" y="70" fill="#f8fafc" font-size="17">learn(topic):</text>
+    <text x="44" y="104" fill="#cbd5e1" font-size="16">practice = run(topic)</text>
+    <text x="44" y="136" fill="#cbd5e1" font-size="16">evidence = test(practice)</text>
+    <text x="44" y="168" fill="#cbd5e1" font-size="16">quality = verify(evidence)</text>
+    <text x="44" y="206" fill="#34d399" font-size="16">return</text>
+    <text x="103" y="206" fill="#f8fafc" font-size="16">reproducible(quality)</text>
+  </g>
+
+  <text x="70" y="388" fill="#64748b" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="15">Python 3.11–3.14 • MIT • EN + PT-BR • Official GitHub Wiki</text>
+</svg>
