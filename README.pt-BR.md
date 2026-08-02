@@ -1,174 +1,588 @@
-# Laboratório de Lógica com Python
+<div align="center">
 
-**Aprenda lógica de programação com código testado, fundamentação científica e práticas open source.**
+<h1>Laboratório de Lógica com Python</h1>
 
-[![Qualidade Python](https://github.com/matheusflorindo32/dio-estudos-logica-python/actions/workflows/python-tests.yml/badge.svg)](https://github.com/matheusflorindo32/dio-estudos-logica-python/actions/workflows/python-tests.yml)
-[![Python 3.11–3.14](https://img.shields.io/badge/Python-3.11%E2%80%933.14-3776AB?logo=python&logoColor=white)](https://www.python.org/)
-[![Ruff](https://img.shields.io/badge/estilo-Ruff-D7FF64?logo=ruff&logoColor=black)](https://docs.astral.sh/ruff/)
-[![mypy](https://img.shields.io/badge/tipos-mypy-2A6DB2)](https://mypy-lang.org/)
-[![Licença MIT](https://img.shields.io/badge/licen%C3%A7a-MIT-green.svg)](LICENSE)
+<p>
+  <strong>Laboratório de Lógica de Programação Orientado por Evidências</strong><br>
+  Uma trilha compacta e reproduzível dos fundamentos da programação à qualidade automatizada de software.
+</p>
 
-[English](README.md) · **Português do Brasil**
+<p>
+  <a href="./README.md">English</a> ·
+  <a href="./README.pt-BR.md"><strong>Português do Brasil</strong></a>
+</p>
 
-[Wiki oficial](https://github.com/matheusflorindo32/dio-estudos-logica-python/wiki) · [Início rápido](#início-rápido) · [Trilha de aprendizagem](#trilha-de-aprendizagem) · [Como contribuir](#como-contribuir)
+<p>
+  <a href="https://github.com/matheusflorindo32/dio-estudos-logica-python/actions/workflows/python-tests.yml">
+    <img alt="Status do CI" src="https://github.com/matheusflorindo32/dio-estudos-logica-python/actions/workflows/python-tests.yml/badge.svg">
+  </a>
+  <a href="https://www.python.org/">
+    <img alt="Python 3.11 a 3.14" src="https://img.shields.io/badge/Python-3.11%E2%80%933.14-3776AB?logo=python&logoColor=white">
+  </a>
+  <a href="https://docs.astral.sh/ruff/">
+    <img alt="Ruff" src="https://img.shields.io/badge/qualidade%20de%20c%C3%B3digo-Ruff-D7FF64?logo=ruff&logoColor=black">
+  </a>
+  <a href="https://mypy-lang.org/">
+    <img alt="mypy" src="https://img.shields.io/badge/tipos%20est%C3%A1ticos-mypy-2A6DB2">
+  </a>
+  <a href="./LICENSE">
+    <img alt="Licença MIT" src="https://img.shields.io/badge/licen%C3%A7a-MIT-green.svg">
+  </a>
+  <a href="https://github.com/matheusflorindo32/dio-estudos-logica-python/wiki">
+    <img alt="Wiki oficial" src="https://img.shields.io/badge/wiki-publicada-0366D6">
+  </a>
+</p>
 
-Repositório educacional aberto para aprender lógica de programação com programas Python pequenos e executáveis. O projeto combina uma trilha incremental, pesquisas revisadas por pares sobre educação em computação, testes automatizados, análise estática e uma Wiki oficial publicada no GitHub.
+<p>
+  <a href="#visão-geral">Visão geral</a> ·
+  <a href="#trilha-de-aprendizagem">Trilha</a> ·
+  <a href="#início-rápido">Início rápido</a> ·
+  <a href="#controles-de-qualidade">Qualidade</a> ·
+  <a href="#fundamentação-científica">Ciência</a> ·
+  <a href="#documentação">Documentação</a>
+</p>
 
-## Visão geral
+</div>
 
-Um laboratório educacional open source para lógica de programação com Python, combinando exemplos progressivos, testes automatizados, controles de qualidade de software e literatura científica publicada. Foi criado para iniciantes, estudantes da DIO, docentes e contribuidores que desejam um projeto compacto cujas afirmações possam ser reproduzidas localmente e no CI.
+Visão geral
 
-## Por que este repositório existe
+O Laboratório de Lógica com Python é um ambiente educacional open source, compacto e voltado aos fundamentos da lógica de programação. O projeto combina exemplos progressivos em Python, testes automatizados, análise estática, integração contínua, Wiki publicada e literatura científica revisada por pares na área de educação em computação.
 
-O projeto transforma conceitos introdutórios em comportamentos observáveis: cada desafio pode ser executado no terminal, suas regras de negócio podem ser importadas e os caminhos relevantes de sucesso, fronteira e falha são testados. Ele também demonstra um fluxo open source transparente com Issues, branches, Pull Requests, integração contínua, arquivos comunitários e documentação.
+Em vez de apresentar código apenas como material de leitura, o repositório transforma cada conceito em comportamento de software executável, testável e reproduzível.
 
-## Resultados de aprendizagem
+Para quem é este projeto
 
-Ao concluir a trilha, a pessoa estudante deverá ser capaz de:
+iniciantes em lógica de programação com Python;
 
-- modelar problemas simples com variáveis, operadores, condições, repetições, funções e listas;
-- diferenciar lógica de negócio reutilizável de entrada e saída do terminal;
-- validar entradas e tratar erros previsíveis com mensagens úteis;
-- empregar type hints, docstrings, funções focadas e visões imutáveis quando apropriado;
-- testar comportamentos normais, limites, entradas inválidas e interfaces de terminal com pytest;
-- executar verificações locais de lint, formatação, tipos, cobertura e compatibilidade.
+estudantes da DIO em desafios de GitHub e open source;
 
-## Trilha de aprendizagem
+professores que buscam exemplos pequenos e testáveis;
 
-| Etapa | Foco | Prática |
-|---|---|---|
-| 1 | Variáveis, tipos e operadores | `desafios/01_variaveis.py` |
-| 2 | Condições e valores de fronteira | `desafios/02_condicionais.py` |
-| 3 | `for`, `while` e controle de repetição | `desafios/03_repeticoes.py` |
-| 4 | Funções, contratos e type hints | `desafios/04_funcoes.py` |
-| 5 | Listas, busca, ordenação e remoção | `desafios/05_listas.py` |
-| 6 | Aplicações de terminal testáveis | `exemplos/` e `tests/` |
+colaboradores interessados em um repositório claro e auditável;
 
-Consulte o [plano de estudos de cinco semanas](docs/plano-de-estudos.md) e a [Wiki oficial](https://github.com/matheusflorindo32/dio-estudos-logica-python/wiki) para encontrar explicações, atividades guiadas, exercícios independentes e referências.
+recrutadores e avaliadores que desejam verificar fundamentos práticos de qualidade de software.
 
-## Início rápido
+Por que este repositório existe
 
-Requisitos: Python 3.11–3.14 e Git. Os programas usam apenas a biblioteca padrão do Python; as ferramentas de desenvolvimento estão isoladas em `requirements-dev.txt`.
+Repositórios introdutórios frequentemente explicam sintaxe, mas nem sempre mostram como validar comportamentos, separar regras de negócio da entrada e saída do terminal ou aplicar controles básicos de qualidade.
 
-### Windows PowerShell
+Este projeto trabalha essas lacunas por meio de:
 
-```powershell
+exercícios pequenos e progressivos;
+
+casos de limite e entradas inválidas;
+
+regras de negócio importáveis;
+
+testes automatizados;
+
+cobertura de linhas e ramificações;
+
+verificação de lint e formatação;
+
+análise estática de tipos;
+
+compatibilidade com múltiplas versões do Python;
+
+documentação científica e técnica publicada.
+
+Resultados de aprendizagem
+
+Ao concluir a trilha, o estudante deverá ser capaz de:
+
+modelar problemas simples com variáveis, operadores, condições, repetições, funções e listas;
+
+separar regras reutilizáveis da interação com o terminal;
+
+validar entradas e tratar erros previsíveis com mensagens claras;
+
+utilizar type hints, docstrings e funções com responsabilidades bem definidas;
+
+testar comportamentos normais, limites, entradas inválidas e fluxos de linha de comando;
+
+executar verificações de lint, formatação, tipos, cobertura e compatibilidade;
+
+compreender um fluxo prático de GitHub com Issues, branches, Pull Requests, CI e Wiki.
+
+Trilha de aprendizagem
+
+Etapa
+
+Foco
+
+Prática
+
+Nível sugerido
+
+01
+
+Variáveis, tipos de dados e operadores
+
+desafios/01_variaveis.py
+
+Fundamentos
+
+02
+
+Condições e valores de fronteira
+
+desafios/02_condicionais.py
+
+Fundamentos
+
+03
+
+for, while e controle de repetição
+
+desafios/03_repeticoes.py
+
+Em desenvolvimento
+
+04
+
+Funções, contratos e type hints
+
+desafios/04_funcoes.py
+
+Em desenvolvimento
+
+05
+
+Listas, busca, ordenação e remoção
+
+desafios/05_listas.py
+
+Intermediário
+
+06
+
+Aplicações de terminal testáveis
+
+exemplos/ e tests/
+
+Aplicado
+
+Consulte o plano de estudos de cinco semanas e a Wiki oficial para atividades guiadas, exercícios independentes, erros comuns e referências publicadas.
+
+Arquitetura pedagógica
+
+flowchart TB
+    A["Pesquisa publicada em educação em computação"] --> D["Sequência progressiva de aprendizagem"]
+    B["Dificuldades documentadas de iniciantes"] --> E["Casos de fronteira e erro"]
+    C["Princípios de carga cognitiva"] --> F["Exemplos pequenos e focados"]
+
+    D --> G["Módulos Python executáveis"]
+    E --> H["Testes automatizados"]
+    F --> I["Explicações claras e Wiki"]
+
+    G --> J["Comportamento reproduzível"]
+    H --> K["Qualidade verificável"]
+    I --> L["Aprendizagem transferível"]
+
+O projeto é orientado por evidências, mas não afirma eficácia educacional experimentalmente comprovada. Seu desenho é guiado por literatura publicada, enquanto o próprio repositório verifica o comportamento do software por meio de código, testes, cobertura, lint, tipagem e CI.
+
+Início rápido
+
+Requisitos: Python 3.11–3.14 e Git.
+
+Os exemplos em execução utilizam apenas a biblioteca padrão do Python. As ferramentas de desenvolvimento ficam isoladas em requirements-dev.txt.
+
+Windows PowerShell
+
 git clone https://github.com/matheusflorindo32/dio-estudos-logica-python.git
 Set-Location dio-estudos-logica-python
+
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
+
 python -m pip install --upgrade pip
 python -m pip install -r requirements-dev.txt
 python -m pytest -v
-```
 
-### Linux e macOS
+Linux e macOS
 
-```bash
 git clone https://github.com/matheusflorindo32/dio-estudos-logica-python.git
 cd dio-estudos-logica-python
+
 python3 -m venv .venv
 source .venv/bin/activate
+
 python3 -m pip install --upgrade pip
 python3 -m pip install -r requirements-dev.txt
 python3 -m pytest -v
-```
 
-## Exemplos práticos
+Exemplos práticos
 
-Execute uma aplicação interativa a partir da raiz do repositório:
+Execute os programas interativos a partir da raiz:
 
-```bash
 python exemplos/calculadora.py
 python exemplos/organizador_estudos.py
 python exemplos/verificador_aprovacao.py
-```
 
 Importe as mesmas regras sem iniciar a interface de terminal:
 
-```python
 from exemplos.calculadora import calcular
 
 resultado = calcular(12, "/", 4)
 print(resultado)  # 3.0
-```
 
-A calculadora valida operadores e divisão por zero. O organizador de estudos valida descrições e identificadores, além de expor as tarefas como uma tupla imutável. Esses comportamentos são cobertos por testes unitários e smoke tests da linha de comando.
+Essa separação permite que as mesmas regras sejam reutilizadas por interfaces de terminal, testes, APIs ou futuras aplicações gráficas.
 
-## Controles de qualidade
+Controles de qualidade
 
-A linha de base local atual é de **76 testes aprovados** e **100% de cobertura combinada de linhas e branches** em `desafios/` e `exemplos/`. O mínimo exigido é 90%; reproduza o resultado em vez de depender de um badge estático de cobertura:
+A linha de base atualmente verificada é:
 
-```bash
+Verificação
+
+Resultado atual
+
+Política aplicada
+
+Testes
+
+76 aprovados
+
+Todos devem passar
+
+Cobertura combinada de linhas e branches
+
+100%
+
+Mínimo de 90%
+
+Lint com Ruff
+
+0 erros
+
+0 erros
+
+Formatação com Ruff
+
+Aprovada
+
+Sem divergência
+
+mypy
+
+Aprovado
+
+Sem erros de tipos
+
+Compatibilidade Python
+
+3.11, 3.12, 3.13 e 3.14
+
+Todas as versões suportadas
+
+Reproduza localmente toda a esteira:
+
 python -m compileall .
 python -m ruff check .
 python -m ruff format --check .
 python -m mypy exemplos desafios
 python -m pytest --cov=exemplos --cov=desafios --cov-branch --cov-report=term-missing
-```
 
-O GitHub Actions executa o job completo de qualidade no Python 3.14 e roda a suíte de testes no Python 3.11, 3.12, 3.13 e 3.14. Consulte o [guia de qualidade](docs/quality.md) para entender escopo e interpretação.
+O GitHub Actions executa:
 
-## Cobertura de testes
+um job completo de qualidade no Python 3.14;
 
-O pytest-cov mede instruções e branches de decisão. A configuração reprova cobertura abaixo de 90%, informa linhas ausentes e branches parciais no terminal, gera relatórios locais em HTML e XML e envia o XML a partir do CI. Os relatórios gerados são intencionalmente excluídos do versionamento.
+a suíte de testes no Python 3.11, 3.12, 3.13 e 3.14;
 
-## Mapa do repositório
+relatório de cobertura e envio de artefato;
 
-```text
+compilação, lint, formatação, tipagem e testes.
+
+Consulte docs/quality.md para a política completa e sua interpretação.
+
+Cobertura de testes
+
+A cobertura é medida com pytest-cov para linhas e ramificações.
+
+O projeto:
+
+informa linhas ausentes e branches parciais no terminal;
+
+reprova cobertura abaixo do mínimo configurado;
+
+gera relatórios XML e HTML localmente;
+
+envia coverage.xml como artefato do CI;
+
+exclui artefatos gerados do controle de versão.
+
+O repositório não utiliza badge estático de cobertura como prova. A fonte de verdade é a esteira executável de CI.
+
+Por que este repositório é diferente
+
+Dimensão
+
+Repositório introdutório convencional
+
+Laboratório de Lógica com Python
+
+Fundamentação
+
+Frequentemente não documentada
+
+Fontes publicadas com DOI
+
+Exemplos
+
+Trechos isolados
+
+Módulos executáveis
+
+Testes
+
+Limitados ou ausentes
+
+Casos normais, limites, erros e CLI
+
+Cobertura
+
+Raramente medida
+
+Linhas e ramificações
+
+Type hints
+
+Opcionais
+
+Verificados nos módulos centrais
+
+Análise estática
+
+Geralmente ausente
+
+Ruff e mypy
+
+CI
+
+Validação manual
+
+GitHub Actions em quatro versões
+
+Arquitetura
+
+Lógica misturada à entrada e saída
+
+Regras de negócio importáveis
+
+Documentação
+
+Apenas README
+
+README, docs e Wiki oficial
+
+Idiomas
+
+Normalmente um
+
+Inglês e português brasileiro
+
+Mapa do repositório
+
 .
-├── .github/          # Workflow de CI e templates de colaboração
-├── desafios/         # Exercícios incrementais de fundamentos
-├── exemplos/         # Aplicações de terminal testáveis
-├── tests/            # Testes unitários, de fronteira, erro e CLI
-├── wiki/             # Fontes versionadas da Wiki oficial
-├── docs/             # Estudos, qualidade, ciência e evidências
-├── README.md         # Documentação internacional em inglês
-├── README.pt-BR.md   # Documentação equivalente em português
-├── pyproject.toml    # Configuração do projeto e das ferramentas
-└── requirements-dev.txt
-```
+├── .github/              # Workflow de CI e templates de contribuição
+├── desafios/             # Exercícios progressivos de fundamentos
+├── exemplos/             # Aplicações de terminal testáveis
+├── tests/                # Testes unitários, limites, erros e CLI
+├── wiki/                 # Fontes versionadas da Wiki oficial
+├── docs/                 # Estudos, qualidade, ciência, i18n e evidências
+├── README.md             # Versão internacional em inglês
+├── README.pt-BR.md       # Versão em português brasileiro
+├── pyproject.toml        # Configuração do projeto e das ferramentas
+├── requirements-dev.txt  # Dependências de desenvolvimento
+└── LICENSE               # Licença MIT
 
-## Ensino fundamentado em evidências
+Fundamentação científica
 
-A abordagem didática usa exemplos progressivos, rastreamento explícito, testes de fronteira e separação de responsabilidades. Sua fundamentação reúne literatura publicada sobre concepções equivocadas de iniciantes, padrões de erro, carga cognitiva, pensamento computacional e estratégias de aprendizagem. Os metadados bibliográficos e links DOI persistentes estão em [Fundamentação científica](docs/scientific-foundation.md); a política documental exclui manuscritos não publicados da bibliografia ativa.
+O projeto utiliza literatura publicada e revisada por pares para orientar seu desenho didático. A bibliografia ativa não utiliza preprints.
 
-Os livros recomendados e usados como referências complementares são *Python Crash Course*, 3ª edição, de Eric Matthes (No Starch Press, 2023), e *Fluent Python*, 2ª edição, de Luciano Ramalho (O'Reilly Media, 2022).
+Os principais temas são:
 
-As fontes centrais incluem Robins, Rountree e Rountree sobre aprendizagem de programação ([DOI](https://doi.org/10.1076/csed.13.2.137.14200)); Lahtinen, Ala-Mutka e Järvinen sobre dificuldades de iniciantes ([DOI](https://doi.org/10.1145/1151954.1067453)); Sweller sobre carga cognitiva ([DOI](https://doi.org/10.1207/s15516709cog1202_4)); e Duran, Zavgorodniaia e Sorva sobre carga cognitiva na educação em computação ([DOI](https://doi.org/10.1145/3483843)). O comportamento da linguagem se baseia na [documentação do Python 3.14](https://docs.python.org/3.14/).
+dificuldades de iniciantes em programação;
 
-## Wiki oficial
+concepções equivocadas e padrões de erro;
 
-A [Wiki publicada](https://github.com/matheusflorindo32/dio-estudos-logica-python/wiki) contém cinco páginas conectadas com pré-requisitos, objetivos, exemplos comentados, leitura passo a passo, erros comuns, boas práticas, exercícios guiados e independentes, ligações com o repositório e referências persistentes.
+carga cognitiva em educação em computação;
 
-## Internacionalização
+pensamento computacional;
 
-O inglês é o idioma internacional de entrada; o português do Brasil é a contraparte integral voltada à aprendizagem. Os exercícios e a Wiki permanecem em português para preservar um currículo e uma API coerentes. Consulte a [política de sincronização](docs/internationalization.md).
+exemplos progressivos e rastreamento explícito;
 
-## Documentação
+reutilização, testabilidade e separação de responsabilidades.
 
-- [Wiki oficial no GitHub](https://github.com/matheusflorindo32/dio-estudos-logica-python/wiki)
-- [Plano de estudos](docs/plano-de-estudos.md)
-- [Garantia de qualidade](docs/quality.md)
-- [Fundamentação científica](docs/scientific-foundation.md)
-- [Estratégia de internacionalização](docs/internationalization.md)
-- [Recursos do GitHub e evidências](docs/recursos-github-utilizados.md)
+Referências selecionadas:
 
-## Como contribuir
+Tema
 
-Leia [CONTRIBUTING.md](CONTRIBUTING.md), o [guia didático de contribuição](docs/guia-de-contribuicao.md) e o [Código de Conduta](CODE_OF_CONDUCT.md). Mantenha as mudanças focadas, abra uma Issue quando apropriado, adicione ou atualize testes e execute todos os comandos de qualidade antes de enviar um Pull Request.
+Fonte publicada
 
-## Roadmap
+Aprendizagem de programação
 
-- manter compatibilidade com as versões de Python suportadas;
-- ampliar exercícios somente quando houver objetivo de aprendizagem claro e testes úteis;
-- evoluir acessibilidade e navegação a partir de feedback de estudantes;
-- avaliar novos idiomas apenas com revisor responsável e processo de sincronização.
+Robins, Rountree e Rountree (2003), DOI
 
-## Licença
+Dificuldades de iniciantes
 
-Distribuído sob a [Licença MIT](LICENSE).
+Lahtinen, Ala-Mutka e Järvinen (2005), DOI
 
-## Autor
+Carga cognitiva
 
-Criado e mantido por **Matheus Florindo de Deus**.
+Sweller (1988), DOI
+
+Educação em computação
+
+Duran, Zavgorodniaia e Sorva (2022), DOI
+
+Concepções equivocadas em programação
+
+Herman et al. (2010), DOI
+
+Livros complementares:
+
+Eric Matthes, Python Crash Course, 3. ed., No Starch Press, 2023;
+
+Luciano Ramalho, Fluent Python, 2. ed., O'Reilly Media, 2022.
+
+O comportamento da linguagem é fundamentado na documentação oficial do Python 3.14.
+
+Consulte a bibliografia completa em docs/scientific-foundation.md.
+
+Wiki oficial
+
+A Wiki oficial reúne cinco páginas conectadas com:
+
+pré-requisitos;
+
+objetivos de aprendizagem;
+
+exemplos comentados;
+
+explicações passo a passo;
+
+erros comuns;
+
+boas práticas;
+
+exercícios guiados e independentes;
+
+links para o repositório;
+
+referências persistentes com DOI.
+
+Documentação
+
+Recurso
+
+Finalidade
+
+Idioma
+
+Wiki oficial
+
+Páginas estruturadas e referências
+
+PT-BR
+
+Plano de estudos
+
+Progressão guiada de cinco semanas
+
+PT-BR
+
+Guia de qualidade
+
+Ferramentas, cobertura, CI e interpretação
+
+EN
+
+Fundamentação científica
+
+Bibliografia publicada e links DOI
+
+EN
+
+Internacionalização
+
+Política de sincronização EN ↔ PT-BR
+
+EN
+
+Recursos do GitHub
+
+Evidências e recursos utilizados
+
+PT-BR
+
+Internacionalização
+
+O inglês é o idioma de apresentação internacional. O português brasileiro é a versão integral voltada ao estudante.
+
+Os exercícios e a Wiki oficial permanecem em português brasileiro para preservar a consistência curricular. Alterações documentais devem manter os dois READMEs sincronizados conforme docs/internationalization.md.
+
+Como contribuir
+
+Antes de abrir um Pull Request:
+
+leia CONTRIBUTING.md;
+
+leia o guia didático de contribuição;
+
+siga o Código de Conduta;
+
+mantenha a alteração focada;
+
+adicione ou atualize testes;
+
+execute toda a esteira de qualidade localmente.
+
+Princípios de contribuição:
+
+preservar compatibilidade com as versões suportadas do Python;
+
+ampliar exercícios apenas quando houver objetivo de aprendizagem claro;
+
+manter exemplos pequenos, legíveis e testáveis;
+
+documentar comportamentos e casos de fronteira;
+
+manter as versões em inglês e português sincronizadas.
+
+Roadmap
+
+manter compatibilidade com versões suportadas do Python;
+
+ampliar exercícios com objetivos claros e testes úteis;
+
+melhorar acessibilidade e navegação com base no retorno dos estudantes;
+
+adicionar demonstrações leves apenas quando melhorarem a compreensão;
+
+avaliar futuras versões linguísticas com revisão responsável e sincronização.
+
+Licença
+
+Distribuído sob a Licença MIT.
+
+Autor
+
+Criado e mantido por Matheus Florindo de Deus.
+
+estudante de Análise e Desenvolvimento de Sistemas no IFES;
+
+educador e pesquisador multidisciplinar;
+
+colaborador de pesquisa em Fisiologia Translacional na UFES;
+
+ORCID: 0009-0006-3848-0662;
+
+perfil no GitHub.
+
+<div align="center">
+
+Construído com disciplina, reprodutibilidade e prática open source.
+
+Não negocie com sua mente.
+
+</div>
