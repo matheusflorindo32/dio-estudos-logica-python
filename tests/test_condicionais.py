@@ -1,24 +1,10 @@
 """Testes do desafio de estruturas condicionais."""
 
-import importlib.util
-from pathlib import Path
-from types import ModuleType
-
 import pytest
 
+from tests.helpers import carregar_desafio
 
-def carregar_modulo_condicionais() -> ModuleType:
-    """Carrega o desafio cujo nome começa com número."""
-    caminho = Path(__file__).parents[1] / "desafios" / "02_condicionais.py"
-    especificacao = importlib.util.spec_from_file_location("condicionais", caminho)
-    if especificacao is None or especificacao.loader is None:
-        raise RuntimeError("Não foi possível carregar o desafio de condicionais.")
-    modulo = importlib.util.module_from_spec(especificacao)
-    especificacao.loader.exec_module(modulo)
-    return modulo
-
-
-CONDICIONAIS = carregar_modulo_condicionais()
+CONDICIONAIS = carregar_desafio("02_condicionais.py")
 
 
 @pytest.mark.parametrize(
@@ -50,3 +36,24 @@ def test_gerar_feedback_reutiliza_classificacao() -> None:
     assert feedback.startswith("Excelente:")
     assert "aprofundando" in feedback
 
+
+def test_ler_nota_repete_ate_receber_valor_valido(
+    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    entradas = iter(["texto", "11", "8,5"])
+    monkeypatch.setattr("builtins.input", lambda _mensagem: next(entradas))
+
+    assert CONDICIONAIS.ler_nota() == 8.5
+    assert capsys.readouterr().out.count("Entrada inválida") == 2
+
+
+def test_main_exibe_classificacao_e_feedback(
+    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    monkeypatch.setattr(CONDICIONAIS, "ler_nota", lambda: 9.0)
+
+    CONDICIONAIS.main()
+
+    saida = capsys.readouterr().out
+    assert "Classificação: Excelente" in saida
+    assert "Feedback: Excelente" in saida

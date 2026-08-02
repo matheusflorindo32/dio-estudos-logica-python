@@ -1,9 +1,11 @@
 """Testes de média, validação de notas e classificação."""
 
+import builtins
 import math
 
 import pytest
 
+from exemplos import verificador_aprovacao
 from exemplos.verificador_aprovacao import calcular_media, classificar_aprovacao
 
 
@@ -36,3 +38,25 @@ def test_classificar_aprovacao(media: float, situacao: str) -> None:
 def test_classificar_aprovacao_rejeita_media_invalida(media: float) -> None:
     with pytest.raises(ValueError, match="entre 0 e 10"):
         classificar_aprovacao(media)
+
+
+def test_main_exibe_media_e_situacao(
+    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    monkeypatch.setattr(builtins, "input", lambda _mensagem: "7,0 8,0")
+
+    verificador_aprovacao.main()
+
+    saida = capsys.readouterr().out
+    assert "Média: 7.50" in saida
+    assert "Situação: Aprovado" in saida
+
+
+def test_main_trata_entrada_invalida(
+    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    monkeypatch.setattr(builtins, "input", lambda _mensagem: "nota-inválida")
+
+    verificador_aprovacao.main()
+
+    assert "Erro:" in capsys.readouterr().out
