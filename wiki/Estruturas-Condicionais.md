@@ -21,9 +21,12 @@ As condições são avaliadas de cima para baixo. Organize faixas sobrepostas da
 
 Valide entradas antes de aplicar regras. Isso impede que uma nota negativa ou maior que 10 gere uma classificação aparentemente válida.
 
+## Funções reutilizáveis
+
+O desafio separa `classificar_nota()` e `gerar_feedback_desempenho()` da leitura com `input()`. Assim, a mesma regra pode ser usada por uma interface de terminal, uma API ou testes automatizados sem duplicação.
+
 ## Prática
 
-Execute `desafios/02_condicionais.py` e experimente 0, 4.9, 5, 6.9, 7, 9 e 10. Depois escreva testes para cada limite.
+Execute `desafios/02_condicionais.py` e experimente 0, 4.9, 5, 6.9, 7, 9 e 10. Observe a classificação e o feedback; depois escreva testes para cada limite.
 
 [Voltar para Home](Home)
-
