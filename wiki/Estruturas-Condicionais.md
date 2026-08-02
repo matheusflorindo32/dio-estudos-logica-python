@@ -10,6 +10,12 @@ Ao concluir esta página, você deverá ser capaz de:
 - identificar erros comuns em condições;
 - testar valores de fronteira.
 
+## Pré-requisitos
+
+- variáveis, tipos básicos e operadores de comparação;
+- execução de arquivos Python pelo terminal;
+- leitura da página [Introdução à Lógica de Programação com Python](Introducao-a-Logica-de-Programacao-com-Python).
+
 ## 1. O que são estruturas condicionais?
 
 Estruturas condicionais permitem que o programa escolha entre caminhos diferentes. Em Python, a instrução `if` avalia expressões em sequência e executa apenas o primeiro bloco cuja condição seja verdadeira. Quando nenhuma condição anterior é satisfeita, o bloco `else`, se existir, é executado (PYTHON SOFTWARE FOUNDATION, 2026a).
@@ -128,7 +134,7 @@ if not usuario_ativo:
 
 ## 7. Erros comuns de iniciantes
 
-Pesquisas em educação em computação mostram que condicionais e laços estão entre os conceitos que mais geram interpretações incorretas entre iniciantes. Entre os problemas recorrentes estão aninhamento desnecessário, uso confuso de `else` e dificuldade de acompanhar qual condição foi satisfeita (ROBINS; ROUNTREE; ROUNTREE, 2003). Um preprint de Naude, Denny e Luxton-Reilly (2024), identificado como não revisado por pares, também descreve anti-patterns recorrentes em condicionais produzidas por estudantes.
+Pesquisas revisadas por pares em educação em computação mostram dificuldades recorrentes de iniciantes ao acompanhar o fluxo de controle, construir condições e interpretar a execução de programas (LAHTINEN; ALA-MUTKA; JÄRVINEN, 2005; MCCALL; KÖLLING, 2019). Por isso, exemplos pequenos, rastreamento passo a passo e testes de fronteira são práticas centrais nesta página.
 
 ### Comparação versus atribuição
 
@@ -186,7 +192,19 @@ Implemente uma função que receba uma temperatura e retorne:
 
 Depois escreva testes para `17.9`, `18`, `27` e `27.1`.
 
-## 10. Prática no repositório
+## 10. Boas práticas
+
+- valide o domínio antes de aplicar a classificação;
+- ordene condições do caso mais restritivo para o mais amplo;
+- dê preferência a expressões booleanas legíveis;
+- teste cada fronteira imediatamente antes, no ponto e imediatamente depois;
+- mantenha a regra separada de `input()` e `print()`.
+
+## 11. Exercício independente
+
+Crie uma função que classifique um horário inteiro entre `0` e `23` como madrugada, manhã, tarde ou noite. Defina por escrito os limites, rejeite valores inválidos e escreva testes para cada transição.
+
+## 12. Prática no repositório
 
 Execute:
 
@@ -198,7 +216,9 @@ Em seguida, consulte os testes relacionados e observe como cada limite é verifi
 
 ## Referências
 
-NAUDE, Etienne; DENNY, Paul; LUXTON-REILLY, Andrew. Anti-patterns in students' conditional statements. [Preprint]. *arXiv*, 2024. DOI: <https://doi.org/10.48550/arXiv.2410.18989>.
+LAHTINEN, Essi; ALA-MUTKA, Kirsti; JÄRVINEN, Hannu-Matti. A study of the difficulties of novice programmers. *ACM SIGCSE Bulletin*, v. 37, n. 3, p. 14-18, 2005. DOI: <https://doi.org/10.1145/1151954.1067453>.
+
+MCCALL, Davin; KÖLLING, Michael. A new look at novice programmer errors. *ACM Transactions on Computing Education*, v. 19, n. 4, p. 1-30, 2019. DOI: <https://doi.org/10.1145/3335814>.
 
 PYTHON SOFTWARE FOUNDATION. *The Python language reference: compound statements*. Versão 3.14. [S. l.], 2026a. Disponível em: <https://docs.python.org/3.14/reference/compound_stmts.html>. Acesso em: 2 ago. 2026.
 

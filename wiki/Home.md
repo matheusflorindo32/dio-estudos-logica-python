@@ -12,6 +12,14 @@ Ao percorrer a Wiki, você deverá ser capaz de:
 - aplicar os conceitos nos desafios do repositório;
 - usar testes para verificar comportamentos esperados e entradas inválidas.
 
+## Pré-requisitos
+
+- Python 3.11 ou superior instalado;
+- um terminal e um editor de texto;
+- disposição para executar, observar e modificar exemplos pequenos.
+
+Não é necessário conhecimento prévio de programação.
+
 ## Índice
 
 - [Introdução à Lógica de Programação com Python](Introducao-a-Logica-de-Programacao-com-Python)
@@ -38,6 +46,13 @@ if nome:  # Uma string não vazia é avaliada como verdadeira.
     print(f"Olá, {nome}!")
 ```
 
+### Leitura passo a passo
+
+1. a variável `nome` recebe uma string;
+2. `if nome` verifica se a string não está vazia;
+3. a f-string insere o valor na mensagem;
+4. `print` produz a saída observável no terminal.
+
 ## Aplicação prática
 
 Use esta Wiki junto com o [repositório principal](https://github.com/matheusflorindo32/dio-estudos-logica-python). Cada página indica um desafio executável e conceitos que podem ser verificados pelos testes automatizados.
@@ -50,10 +65,24 @@ Use esta Wiki junto com o [repositório principal](https://github.com/matheusflo
 - testar somente o caso de sucesso;
 - avançar sem conseguir explicar como as variáveis mudam.
 
-## Atividade de orientação
+## Boas práticas de aprendizagem
+
+- execute um exemplo antes e depois de modificá-lo;
+- altere apenas uma variável por tentativa;
+- anote a saída prevista antes de observar a saída real;
+- trate mensagens de erro como evidência para investigação;
+- valide também limites e entradas inválidas.
+
+## Exercício guiado
 
 Escolha uma página do índice, execute o desafio correspondente e registre: entrada utilizada, resultado previsto, resultado observado e uma mudança que você conseguiu explicar.
+
+## Exercício independente
+
+Escolha um problema cotidiano simples, descreva suas entradas, regras e saídas e indique se cada regra exige uma condição, uma repetição ou uma função. Depois implemente a menor versão executável e escreva um teste para um caso de fronteira.
 
 ## Referências
 
 ROBINS, Anthony; ROUNTREE, Janet; ROUNTREE, Nathan. Learning and teaching programming: a review and discussion. *Computer Science Education*, v. 13, n. 2, p. 137-172, 2003. DOI: <https://doi.org/10.1076/csed.13.2.137.14200>.
+
+[Voltar para Home](Home)

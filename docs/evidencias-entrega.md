@@ -80,7 +80,7 @@ A validação remota confirmou títulos, conteúdo não vazio, blocos de código
 ### Revisão científica e ABNT
 
 - quatro artigos revisados por pares tiveram autores, títulos, periódicos, volumes, números, páginas, anos e DOIs conferidos no Crossref;
-- os trabalhos de Naude, Denny e Luxton-Reilly (2024) e Eckert e Kautz (2026) foram confirmados no arXiv e identificados explicitamente como preprints;
+- duas fontes sem revisão por pares foram removidas integralmente da documentação atual e substituídas por artigos publicados em periódicos ou anais científicos;
 - os DOIs foram convertidos em links persistentes `https://doi.org/`;
 - a documentação oficial foi fixada na versão Python 3.14;
 - citações autor-data e referências foram revisadas conforme a ABNT NBR 6023:2018, na medida aplicável.

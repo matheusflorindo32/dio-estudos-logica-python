@@ -10,6 +10,12 @@ Ao concluir esta página, você deverá ser capaz de:
 - separar regras de negócio da interface de entrada e saída;
 - escrever funções pequenas, previsíveis e testáveis.
 
+## Pré-requisitos
+
+- variáveis, condições, repetições e tipos básicos;
+- execução de módulos Python pelo terminal;
+- noções de entrada, processamento, validação e saída.
+
 ## 1. O que é uma função?
 
 Uma **função** é um bloco nomeado de instruções criado para executar uma responsabilidade específica. Em Python, funções são definidas com `def`, podem receber parâmetros e podem devolver resultados com `return` (PYTHON SOFTWARE FOUNDATION, 2026b).
@@ -46,6 +52,14 @@ def calcular_area(largura: float, altura: float) -> float:
 | `raise` | sinaliza entrada inválida |
 | `return` | devolve o resultado |
 
+### Leitura passo a passo
+
+1. a assinatura declara nome, parâmetros e tipo de retorno;
+2. a docstring registra o contrato esperado;
+3. a condição protege o domínio válido;
+4. `raise` encerra a chamada com um erro útil quando necessário;
+5. `return` entrega um valor reutilizável no caminho de sucesso.
+
 ## 3. Parâmetros e argumentos
 
 **Parâmetros** aparecem na definição da função. **Argumentos** são os valores fornecidos na chamada.
@@ -53,6 +67,7 @@ def calcular_area(largura: float, altura: float) -> float:
 ```python
 def somar(a: float, b: float) -> float:
     return a + b
+
 
 resultado = somar(2, 3)
 ```
@@ -67,6 +82,7 @@ Nesse exemplo, `a` e `b` são parâmetros; `2` e `3` são argumentos.
 # Menos reutilizável
 def mostrar_dobro(numero: float) -> None:
     print(numero * 2)
+
 
 # Mais reutilizável e testável
 def calcular_dobro(numero: float) -> float:
@@ -201,7 +217,19 @@ Implemente uma função chamada `calcular_imc` que:
 - possua type hints e docstring;
 - seja acompanhada por testes para casos válidos e inválidos.
 
-## 13. Prática no repositório
+## 13. Boas práticas
+
+- escolha um nome que descreva a ação ou o resultado;
+- mantenha uma responsabilidade principal por função;
+- documente parâmetros, retorno e erros que fazem parte do contrato;
+- evite estado global quando os dados podem ser parâmetros;
+- faça a lógica retornar valores e deixe a interface apresentá-los.
+
+## 14. Exercício independente
+
+Crie funções separadas para validar um preço, calcular um desconto percentual e formatar o valor final. Escreva type hints, docstrings e testes para desconto zero, desconto máximo permitido e entradas inválidas.
+
+## 15. Prática no repositório
 
 Leia:
 
