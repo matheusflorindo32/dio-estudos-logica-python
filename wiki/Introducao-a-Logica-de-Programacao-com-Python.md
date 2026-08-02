@@ -16,6 +16,8 @@ Um **algoritmo** é uma sequência finita, ordenada e não ambígua de instruç�
 
 A programação também desenvolve habilidades associadas ao **pensamento computacional**, como decomposição de problemas, reconhecimento de padrões, abstração e elaboração de procedimentos. Wing (2006) destaca que o pensamento computacional não se limita ao uso de computadores: ele é uma forma de organizar problemas e soluções de modo que possam ser representados e executados sistematicamente.
 
+Na educação básica, a revisão de Lye e Koh (2014) encontrou evidências de que atividades de programação podem apoiar o pensamento computacional quando são acompanhadas por estratégias pedagógicas e ferramentas adequadas.
+
 A literatura sobre ensino de programação mostra que iniciantes não aprendem apenas memorizando comandos. Eles precisam construir modelos mentais sobre como o programa executa cada instrução e como os dados mudam ao longo do tempo (ROBINS; ROUNTREE; ROUNTREE, 2003).
 
 ## 2. Decompondo um problema
@@ -161,14 +163,14 @@ Depois compare sua solução com os arquivos das pastas `desafios/` e `exemplos/
 
 ## Referências
 
-LYE, Sze Yee; KOH, Joyce Hwee Ling. Review on teaching and learning of computational thinking through programming: what is next for K-12? *Computers in Human Behavior*, v. 41, p. 51-61, 2014. DOI: 10.1016/j.chb.2014.09.012.
+LYE, Sze Yee; KOH, Joyce Hwee Ling. Review on teaching and learning of computational thinking through programming: what is next for K-12? *Computers in Human Behavior*, v. 41, p. 51-61, 2014. DOI: <https://doi.org/10.1016/j.chb.2014.09.012>.
 
-PYTHON SOFTWARE FOUNDATION. *The Python language reference: compound statements*. 2026a. Disponível em: <https://docs.python.org/3/reference/compound_stmts.html>. Acesso em: 2 ago. 2026.
+PYTHON SOFTWARE FOUNDATION. *The Python language reference: compound statements*. Versão 3.14. [S. l.], 2026a. Disponível em: <https://docs.python.org/3.14/reference/compound_stmts.html>. Acesso em: 2 ago. 2026.
 
-ROBINS, Anthony; ROUNTREE, Janet; ROUNTREE, Nathan. Learning and teaching programming: a review and discussion. *Computer Science Education*, v. 13, n. 2, p. 137-172, 2003. DOI: 10.1076/csed.13.2.137.14200.
+ROBINS, Anthony; ROUNTREE, Janet; ROUNTREE, Nathan. Learning and teaching programming: a review and discussion. *Computer Science Education*, v. 13, n. 2, p. 137-172, 2003. DOI: <https://doi.org/10.1076/csed.13.2.137.14200>.
 
-SWELLER, John. Cognitive load during problem solving: effects on learning. *Cognitive Science*, v. 12, n. 2, p. 257-285, 1988. DOI: 10.1207/s15516709cog1202_4.
+SWELLER, John. Cognitive load during problem solving: effects on learning. *Cognitive Science*, v. 12, n. 2, p. 257-285, 1988. DOI: <https://doi.org/10.1207/s15516709cog1202_4>.
 
-WING, Jeannette M. Computational thinking. *Communications of the ACM*, v. 49, n. 3, p. 33-35, 2006. DOI: 10.1145/1118178.1118215.
+WING, Jeannette M. Computational thinking. *Communications of the ACM*, v. 49, n. 3, p. 33-35, 2006. DOI: <https://doi.org/10.1145/1118178.1118215>.
 
 [Voltar para Home](Home)

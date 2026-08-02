@@ -216,10 +216,10 @@ Depois compare as funções com os testes existentes em `tests/`.
 
 ## Referências
 
-PYTHON SOFTWARE FOUNDATION. *The Python tutorial: defining functions*. 2026b. Disponível em: <https://docs.python.org/3/tutorial/controlflow.html#defining-functions>. Acesso em: 2 ago. 2026.
+PYTHON SOFTWARE FOUNDATION. *The Python tutorial: defining functions*. Versão 3.14. [S. l.], 2026b. Disponível em: <https://docs.python.org/3.14/tutorial/controlflow.html#defining-functions>. Acesso em: 2 ago. 2026.
 
-ROBINS, Anthony; ROUNTREE, Janet; ROUNTREE, Nathan. Learning and teaching programming: a review and discussion. *Computer Science Education*, v. 13, n. 2, p. 137-172, 2003. DOI: 10.1076/csed.13.2.137.14200.
+ROBINS, Anthony; ROUNTREE, Janet; ROUNTREE, Nathan. Learning and teaching programming: a review and discussion. *Computer Science Education*, v. 13, n. 2, p. 137-172, 2003. DOI: <https://doi.org/10.1076/csed.13.2.137.14200>.
 
-SWELLER, John. Cognitive load during problem solving: effects on learning. *Cognitive Science*, v. 12, n. 2, p. 257-285, 1988. DOI: 10.1207/s15516709cog1202_4.
+SWELLER, John. Cognitive load during problem solving: effects on learning. *Cognitive Science*, v. 12, n. 2, p. 257-285, 1988. DOI: <https://doi.org/10.1207/s15516709cog1202_4>.
 
 [Voltar para Home](Home)

@@ -153,7 +153,7 @@ A função é testável porque recebe os dados diretamente e devolve um valor, s
 
 ## 8. Erros comuns de iniciantes
 
-A literatura em educação em programação relata dificuldades frequentes para compreender o fluxo de execução, os limites do intervalo, a atualização de variáveis e a condição de parada (ROBINS; ROUNTREE; ROUNTREE, 2003). Estudos recentes também organizam erros de interpretação relacionados a seleção e iteração, mostrando que muitos estudantes confundem a quantidade de execuções ou o momento em que a condição é avaliada (ECKERT; KAUTZ, 2026).
+A literatura em educação em programação relata dificuldades frequentes para compreender o fluxo de execução, os limites do intervalo, a atualização de variáveis e a condição de parada (ROBINS; ROUNTREE; ROUNTREE, 2003). Um preprint recente organiza erros de interpretação relacionados a seleção e iteração, mostrando que estudantes podem confundir a quantidade de execuções ou o momento em que a condição é avaliada (ECKERT; KAUTZ, 2026); esse trabalho ainda não deve ser apresentado como artigo revisado por pares.
 
 Erros comuns incluem:
 
@@ -192,12 +192,12 @@ Depois:
 
 ## Referências
 
-ECKERT, Dimitri; KAUTZ, Christian. How students (mis)understand conditionals and loops: a taxonomy. *arXiv*, 2026. DOI: 10.48550/arXiv.2605.26966.
+ECKERT, Dimitri; KAUTZ, Christian. How students (mis)understand conditionals and loops: a taxonomy. [Preprint]. *arXiv*, 2026. DOI: <https://doi.org/10.48550/arXiv.2605.26966>.
 
-PYTHON SOFTWARE FOUNDATION. *The Python language reference: compound statements*. 2026a. Disponível em: <https://docs.python.org/3/reference/compound_stmts.html>. Acesso em: 2 ago. 2026.
+PYTHON SOFTWARE FOUNDATION. *The Python language reference: compound statements*. Versão 3.14. [S. l.], 2026a. Disponível em: <https://docs.python.org/3.14/reference/compound_stmts.html>. Acesso em: 2 ago. 2026.
 
-ROBINS, Anthony; ROUNTREE, Janet; ROUNTREE, Nathan. Learning and teaching programming: a review and discussion. *Computer Science Education*, v. 13, n. 2, p. 137-172, 2003. DOI: 10.1076/csed.13.2.137.14200.
+ROBINS, Anthony; ROUNTREE, Janet; ROUNTREE, Nathan. Learning and teaching programming: a review and discussion. *Computer Science Education*, v. 13, n. 2, p. 137-172, 2003. DOI: <https://doi.org/10.1076/csed.13.2.137.14200>.
 
-SWELLER, John. Cognitive load during problem solving: effects on learning. *Cognitive Science*, v. 12, n. 2, p. 257-285, 1988. DOI: 10.1207/s15516709cog1202_4.
+SWELLER, John. Cognitive load during problem solving: effects on learning. *Cognitive Science*, v. 12, n. 2, p. 257-285, 1988. DOI: <https://doi.org/10.1207/s15516709cog1202_4>.
 
 [Voltar para Home](Home)
