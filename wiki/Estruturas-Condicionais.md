@@ -128,7 +128,7 @@ if not usuario_ativo:
 
 ## 7. Erros comuns de iniciantes
 
-Pesquisas em educação em computação mostram que condicionais e laços estão entre os conceitos que mais geram interpretações incorretas entre iniciantes. Entre os problemas recorrentes estão aninhamento desnecessário, uso confuso de `else` e dificuldade de acompanhar qual condição foi satisfeita (ROBINS; ROUNTREE; ROUNTREE, 2003; NAUDE; DENNY; LUXTON-REILLY, 2024).
+Pesquisas em educação em computação mostram que condicionais e laços estão entre os conceitos que mais geram interpretações incorretas entre iniciantes. Entre os problemas recorrentes estão aninhamento desnecessário, uso confuso de `else` e dificuldade de acompanhar qual condição foi satisfeita (ROBINS; ROUNTREE; ROUNTREE, 2003). Um preprint de Naude, Denny e Luxton-Reilly (2024), identificado como não revisado por pares, também descreve anti-patterns recorrentes em condicionais produzidas por estudantes.
 
 ### Comparação versus atribuição
 
@@ -198,10 +198,10 @@ Em seguida, consulte os testes relacionados e observe como cada limite é verifi
 
 ## Referências
 
-NAUDE, Etienne; DENNY, Paul; LUXTON-REILLY, Andrew. Anti-patterns in students' conditional statements. *arXiv*, 2024. DOI: 10.48550/arXiv.2410.18989.
+NAUDE, Etienne; DENNY, Paul; LUXTON-REILLY, Andrew. Anti-patterns in students' conditional statements. [Preprint]. *arXiv*, 2024. DOI: <https://doi.org/10.48550/arXiv.2410.18989>.
 
-PYTHON SOFTWARE FOUNDATION. *The Python language reference: compound statements*. 2026a. Disponível em: <https://docs.python.org/3/reference/compound_stmts.html>. Acesso em: 2 ago. 2026.
+PYTHON SOFTWARE FOUNDATION. *The Python language reference: compound statements*. Versão 3.14. [S. l.], 2026a. Disponível em: <https://docs.python.org/3.14/reference/compound_stmts.html>. Acesso em: 2 ago. 2026.
 
-ROBINS, Anthony; ROUNTREE, Janet; ROUNTREE, Nathan. Learning and teaching programming: a review and discussion. *Computer Science Education*, v. 13, n. 2, p. 137-172, 2003. DOI: 10.1076/csed.13.2.137.14200.
+ROBINS, Anthony; ROUNTREE, Janet; ROUNTREE, Nathan. Learning and teaching programming: a review and discussion. *Computer Science Education*, v. 13, n. 2, p. 137-172, 2003. DOI: <https://doi.org/10.1076/csed.13.2.137.14200>.
 
 [Voltar para Home](Home)

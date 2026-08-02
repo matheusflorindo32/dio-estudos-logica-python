@@ -26,7 +26,7 @@ Praticar lógica de programação e demonstrar, em um projeto individual legíti
 - templates de Issue e Pull Request;
 - branch de funcionalidade e Pull Request ligado a uma Issue;
 - GitHub Actions para Python 3.11 e 3.12;
-- documentação preparada para GitHub Wiki;
+- [Wiki oficial](https://github.com/matheusflorindo32/dio-estudos-logica-python/wiki) publicada com conteúdo didático e referências verificadas;
 - arquivos comunitários: `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md` e `CHANGELOG.md`.
 
 Os registros verificáveis estão em [docs/recursos-github-utilizados.md](docs/recursos-github-utilizados.md) e [docs/evidencias-entrega.md](docs/evidencias-entrega.md).
@@ -156,4 +156,4 @@ Distribuído sob a licença MIT. Consulte [LICENSE](LICENSE).
 - [x] licença MIT;
 - [x] Wiki preparada no diretório `wiki/`;
 - [x] Issue, Pull Request, merge e GitHub Actions confirmados;
-- [ ] Wiki publicada — a inicialização manual ainda é necessária; consulte as evidências.
+- [x] Wiki oficial publicada e cinco páginas verificadas.

@@ -7,10 +7,15 @@
 | Repositório | `dio-estudos-logica-python` |
 | URL do repositório | <https://github.com/matheusflorindo32/dio-estudos-logica-python> |
 | URL da Issue | <https://github.com/matheusflorindo32/dio-estudos-logica-python/issues/1> |
-| URL do Pull Request | <https://github.com/matheusflorindo32/dio-estudos-logica-python/pull/2> |
-| Status do merge | CONCLUÍDO — merge commit `2dc87bd`, em 2026-08-02 12:01:40 UTC |
+| Pull Request da funcionalidade | <https://github.com/matheusflorindo32/dio-estudos-logica-python/pull/2> |
+| Pull Request da documentação científica | <https://github.com/matheusflorindo32/dio-estudos-logica-python/pull/3> — mesclado |
+| Pull Request da publicação oficial | <https://github.com/matheusflorindo32/dio-estudos-logica-python/pull/4> |
+| Status do merge da funcionalidade | CONCLUÍDO — merge commit `2dc87bd`, em 2026-08-02 12:01:40 UTC |
 | Status da Issue | ENCERRADA automaticamente pelo `Closes #1` do Pull Request |
-| Status da Wiki | PENDENTE — configuração habilitada, mas a Wiki ainda não foi inicializada |
+| Status da Wiki | PUBLICADA E VERIFICADA — cinco páginas oficiais acessíveis |
+| Branch da Wiki | `master` |
+| Commit da Wiki | `efef0c26b4104805945e9b68c0be5950441a91ba` |
+| Data da publicação da Wiki | 2 ago. 2026, 10:23:51 (UTC-03:00) |
 | Status do GitHub Actions | APROVADO — Python 3.11 e 3.12 |
 | Execução após o merge | <https://github.com/matheusflorindo32/dio-estudos-logica-python/actions/runs/30746960378> |
 | Execução após atualizar as Actions | <https://github.com/matheusflorindo32/dio-estudos-logica-python/actions/runs/30747091128> |
@@ -43,22 +48,33 @@ python -m compileall .
 python -m pytest -v
 ```
 
-Resultado final local: `39 passed in 0.07s`. No GitHub Actions, os jobs de Python 3.11 e 3.12 passaram no push da branch, no Pull Request, no commit de merge e após a atualização para `actions/checkout@v7` e `actions/setup-python@v7`.
+Resultado local desta revisão: `39 passed in 0.08s`. No GitHub Actions, os jobs de Python 3.11 e 3.12 passaram no push da branch, no Pull Request, no commit de merge e após a atualização para `actions/checkout@v7` e `actions/setup-python@v7`.
 
 ## Situação da Wiki
 
-A opção de Wiki está habilitada no repositório. Entretanto, a tentativa real de clonar `https://github.com/matheusflorindo32/dio-estudos-logica-python.wiki.git` retornou `Repository not found`, porque nenhuma primeira página foi criada pela interface. As cinco fontes permanecem preservadas em `wiki/`.
+A Wiki oficial foi publicada na branch `master` do repositório `dio-estudos-logica-python.wiki.git`, no commit `efef0c2`. A página Home criada anteriormente foi inspecionada antes da atualização; nenhuma página existente foi apagada e não houve force push.
 
-## Publicação manual da Wiki
+### Páginas oficiais verificadas
 
-Se a Wiki não puder ser inicializada automaticamente:
+- [Home](https://github.com/matheusflorindo32/dio-estudos-logica-python/wiki)
+- [Introdução à Lógica de Programação com Python](https://github.com/matheusflorindo32/dio-estudos-logica-python/wiki/Introducao-a-Logica-de-Programacao-com-Python)
+- [Estruturas Condicionais](https://github.com/matheusflorindo32/dio-estudos-logica-python/wiki/Estruturas-Condicionais)
+- [Estruturas de Repetição](https://github.com/matheusflorindo32/dio-estudos-logica-python/wiki/Estruturas-de-Repeticao)
+- [Funções em Python](https://github.com/matheusflorindo32/dio-estudos-logica-python/wiki/Funcoes-em-Python)
 
-1. abra a aba **Wiki** do repositório no GitHub;
-2. crie a primeira página com o título `Home` para inicializar o repositório da Wiki;
-3. clone `https://github.com/matheusflorindo32/dio-estudos-logica-python.wiki.git`;
-4. copie os arquivos Markdown de `wiki/` para a raiz do clone, sem excluir conteúdo existente;
-5. revise os links, faça commit e push;
-6. abra a Wiki e confirme cada página antes de marcar a entrega como concluída.
+A validação remota confirmou títulos, conteúdo não vazio, blocos de código renderizados, seções de referências, links DOI e ausência de 404. Os quatro links `Voltar para Home` apontam para `Home`; um clique real de retorno também foi confirmado no navegador.
+
+### Revisão científica e ABNT
+
+- quatro artigos revisados por pares tiveram autores, títulos, periódicos, volumes, números, páginas, anos e DOIs conferidos no Crossref;
+- os trabalhos de Naude, Denny e Luxton-Reilly (2024) e Eckert e Kautz (2026) foram confirmados no arXiv e identificados explicitamente como preprints;
+- os DOIs foram convertidos em links persistentes `https://doi.org/`;
+- a documentação oficial foi fixada na versão Python 3.14;
+- citações autor-data e referências foram revisadas conforme a ABNT NBR 6023:2018, na medida aplicável.
+
+### Histórico preservado
+
+Uma tentativa anterior de clone havia retornado `Repository not found`, pois a primeira Home ainda não existia. Após a inicialização manual, `git ls-remote` e o clone oficial passaram a funcionar. Esse histórico explica a pendência registrada nas versões anteriores deste documento.
 
 ## GitHub Project
 
@@ -92,5 +108,6 @@ gh project item-create NUMERO --owner matheusflorindo32 --title "Documentação"
 - [x] Issue e Pull Request reais confirmados;
 - [x] workflow remoto aprovado;
 - [x] merge realizado e Issue encerrada;
-- [x] pendência manual da Wiki explicitada sem afirmar publicação;
+- [x] Wiki oficial publicada e cinco páginas verificadas;
+- [x] referências científicas e padrão ABNT revisados;
 - [x] URL exata do repositório pronta para “Entregar Projeto”.
