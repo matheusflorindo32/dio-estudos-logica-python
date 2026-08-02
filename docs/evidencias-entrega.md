@@ -9,8 +9,9 @@
 | URL da Issue | <https://github.com/matheusflorindo32/dio-estudos-logica-python/issues/1> |
 | Pull Request da funcionalidade | <https://github.com/matheusflorindo32/dio-estudos-logica-python/pull/2> |
 | Pull Request da documentação científica | <https://github.com/matheusflorindo32/dio-estudos-logica-python/pull/3> — mesclado |
-| Pull Request da publicação oficial | <https://github.com/matheusflorindo32/dio-estudos-logica-python/pull/4> |
+| Pull Request da publicação oficial | <https://github.com/matheusflorindo32/dio-estudos-logica-python/pull/4> — mesclado |
 | Status do merge da funcionalidade | CONCLUÍDO — merge commit `2dc87bd`, em 2026-08-02 12:01:40 UTC |
+| Status do merge da Wiki | CONCLUÍDO — merge commit `3b4b90a`, em 2026-08-02 13:28:32 UTC |
 | Status da Issue | ENCERRADA automaticamente pelo `Closes #1` do Pull Request |
 | Status da Wiki | PUBLICADA E VERIFICADA — cinco páginas oficiais acessíveis |
 | Branch da Wiki | `master` |
@@ -19,6 +20,7 @@
 | Status do GitHub Actions | APROVADO — Python 3.11 e 3.12 |
 | Execução após o merge | <https://github.com/matheusflorindo32/dio-estudos-logica-python/actions/runs/30746960378> |
 | Execução após atualizar as Actions | <https://github.com/matheusflorindo32/dio-estudos-logica-python/actions/runs/30747091128> |
+| Execução após o merge da Wiki | <https://github.com/matheusflorindo32/dio-estudos-logica-python/actions/runs/30750002094> — aprovada |
 | Branch utilizada | `feature/estruturas-condicionais` — removida do remoto após o merge |
 | Testes locais | 39 aprovados, 0 reprovados, com Python 3.11.15 e pytest 8.4.1 |
 | Compilação local | APROVADA — `python -m compileall .` sem erro |
@@ -39,6 +41,17 @@ b3fdf46 ci: atualiza actions para Node.js 24
 ```
 
 O commit que atualiza este próprio registro pode ser consultado com `git log --oneline --reverse`; ele não é autorreferenciado com um hash dentro do mesmo conteúdo.
+
+### Commits da conclusão da Wiki
+
+```text
+efef0c2 docs: publica Wiki didática com referências científicas (repositório da Wiki)
+1510a6c docs: amplia Wiki com estrutura didática e referências ABNT (PR #3)
+65f56c2 docs: revisa referências científicas da Wiki
+38b0c83 docs: registra publicação da Wiki oficial
+8482c4f docs: adiciona referência ao PR final
+3b4b90a Merge pull request #4 from matheusflorindo32/docs/finaliza-wiki-oficial
+```
 
 ## Validações executadas
 
@@ -110,4 +123,5 @@ gh project item-create NUMERO --owner matheusflorindo32 --title "Documentação"
 - [x] merge realizado e Issue encerrada;
 - [x] Wiki oficial publicada e cinco páginas verificadas;
 - [x] referências científicas e padrão ABNT revisados;
+- [x] Pull Requests #3 e #4 mesclados com GitHub Actions aprovado;
 - [x] URL exata do repositório pronta para “Entregar Projeto”.
