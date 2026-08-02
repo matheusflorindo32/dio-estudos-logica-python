@@ -1,24 +1,38 @@
-# Estruturas Condicionais
+<div align="center">
 
-## Objetivos de aprendizagem
+<img src="https://raw.githubusercontent.com/matheusflorindo32/dio-estudos-logica-python/main/docs/assets/wiki/wiki-condicionais.svg" alt="Módulo visual de estruturas condicionais" width="100%">
 
-Ao concluir esta página, você deverá ser capaz de:
+[← Fundamentos](Introducao-a-Logica-de-Programacao-com-Python) · [Home](Home) · [Repetições →](Estruturas-de-Repeticao)
 
-- explicar como `if`, `elif` e `else` controlam o fluxo de execução;
-- organizar condições da mais específica para a mais geral;
-- validar entradas antes de aplicar regras;
-- identificar erros comuns em condições;
-- testar valores de fronteira.
+</div>
 
-## Pré-requisitos
+---
 
-- variáveis, tipos básicos e operadores de comparação;
-- execução de arquivos Python pelo terminal;
-- leitura da página [Introdução à Lógica de Programação com Python](Introducao-a-Logica-de-Programacao-com-Python).
+## O que você vai dominar
 
-## 1. O que são estruturas condicionais?
+| Competência | Evidência prática |
+|---|---|
+| Ler decisões | prevê qual bloco será executado |
+| Ordenar regras | começa pelo caso mais específico |
+| Validar domínio | rejeita entradas semanticamente inválidas |
+| Testar fronteiras | verifica antes, no limite e depois |
+| Reduzir ambiguidade | separa validação de classificação |
 
-Estruturas condicionais permitem que o programa escolha entre caminhos diferentes. Em Python, a instrução `if` avalia expressões em sequência e executa apenas o primeiro bloco cuja condição seja verdadeira. Quando nenhuma condição anterior é satisfeita, o bloco `else`, se existir, é executado (PYTHON SOFTWARE FOUNDATION, 2026a).
+> [!TIP]
+> Condicionais não são apenas sintaxe: são uma forma de representar decisões com limites explícitos.
+
+## 1. O fluxo de decisão
+
+```mermaid
+flowchart TD
+    A[Entrada] --> B{É válida?}
+    B -- Não --> C[Erro claro]
+    B -- Sim --> D{Atende à regra 1?}
+    D -- Sim --> E[Resultado A]
+    D -- Não --> F{Atende à regra 2?}
+    F -- Sim --> G[Resultado B]
+    F -- Não --> H[Resultado final]
+```
 
 ```python
 idade = 20
@@ -29,25 +43,29 @@ else:
     print("Menor de idade")
 ```
 
-## 2. Sintaxe básica
+## 2. Sintaxe com intenção
 
 ```python
-if condicao_1:
-    bloco_1
-elif condicao_2:
-    bloco_2
+if condicao_mais_especifica:
+    caminho_1
+elif condicao_alternativa:
+    caminho_2
 else:
-    bloco_final
+    caminho_final
 ```
 
-Pontos importantes:
+| Elemento | Papel |
+|---|---|
+| `if` | primeira decisão |
+| `elif` | alternativa avaliada se as anteriores falharem |
+| `else` | caminho residual |
+| `:` | encerra o cabeçalho |
+| indentação | define o bloco pertencente à condição |
 
-- cada condição deve produzir `True` ou `False`;
-- os dois-pontos encerram o cabeçalho;
-- a indentação define quais instruções pertencem ao bloco;
-- somente um dos blocos da cadeia é executado.
+> [!IMPORTANT]
+> Em uma cadeia `if/elif/else`, somente o primeiro bloco verdadeiro é executado.
 
-## 3. Exemplo didático: classificação de nota
+## 3. Exemplo central: classificação de nota
 
 ```python
 def classificar_nota(nota: float) -> str:
@@ -63,16 +81,18 @@ def classificar_nota(nota: float) -> str:
         return "Reprovado"
 ```
 
-### Leitura passo a passo
+### Leitura por camadas
 
-1. A primeira condição valida a entrada.
-2. Se `nota >= 7`, a função retorna `Aprovado`.
-3. Caso contrário, verifica se `nota >= 5`.
-4. Se nenhuma condição for verdadeira, retorna `Reprovado`.
+| Camada | Pergunta |
+|---|---|
+| Validação | o valor pertence ao domínio `0..10`? |
+| Faixa superior | é maior ou igual a `7`? |
+| Faixa intermediária | é maior ou igual a `5`? |
+| Faixa residual | sobrou algum valor válido abaixo de `5`? |
 
-## 4. Por que a ordem importa?
+## 4. Por que a ordem importa
 
-As condições são avaliadas de cima para baixo. Veja um erro comum:
+### Ordem incorreta
 
 ```python
 if nota >= 5:
@@ -81,7 +101,9 @@ elif nota >= 7:
     resultado = "Aprovado"
 ```
 
-Para uma nota 8, a primeira condição já é verdadeira. O segundo teste nunca será alcançado. A ordem correta é começar pela faixa mais restritiva:
+Para `nota = 8`, a primeira condição já é verdadeira. O segundo bloco nunca será alcançado.
+
+### Ordem correta
 
 ```python
 if nota >= 7:
@@ -92,71 +114,94 @@ else:
     resultado = "Reprovado"
 ```
 
-## 5. Validação antes da regra
+> [!WARNING]
+> Uma condição ampla colocada antes de uma condição específica pode tornar parte do código inalcançável.
 
-Uma condição pode produzir uma resposta tecnicamente executável, mas semanticamente incorreta. Sem validação, uma nota `-3` poderia ser classificada simplesmente como “Reprovado”, ocultando o verdadeiro problema: a entrada é inválida.
+## 5. Validação × classificação
 
 ```python
 if not 0 <= nota <= 10:
     raise ValueError("Nota inválida")
 ```
 
-Separar validação e regra de negócio melhora a clareza, facilita testes e reduz ambiguidades.
+| Situação | Sem validação | Com validação |
+|---|---|---|
+| `nota = -3` | “Reprovado” | erro de domínio |
+| `nota = 12` | “Aprovado” | erro de domínio |
+
+Separar essas responsabilidades melhora clareza, testes e manutenção.
 
 ## 6. Operadores lógicos
 
-### `and`
+<table>
+<tr>
+<td width="33%" valign="top">
 
-Todas as condições devem ser verdadeiras:
+### `and`
+Todas as condições precisam ser verdadeiras.
 
 ```python
-if idade >= 18 and possui_habilitacao:
-    print("Pode dirigir")
+if idade >= 18 and habilitado:
+    autorizar()
 ```
+
+</td>
+<td width="33%" valign="top">
 
 ### `or`
-
-Pelo menos uma condição deve ser verdadeira:
+Pelo menos uma condição precisa ser verdadeira.
 
 ```python
-if dia == "sábado" or dia == "domingo":
-    print("Fim de semana")
+if sabado or domingo:
+    descansar()
 ```
+
+</td>
+<td width="33%" valign="top">
 
 ### `not`
-
-Inverte o valor lógico:
-
-```python
-if not usuario_ativo:
-    print("Acesso bloqueado")
-```
-
-## 7. Erros comuns de iniciantes
-
-Pesquisas revisadas por pares em educação em computação mostram dificuldades recorrentes de iniciantes ao acompanhar o fluxo de controle, construir condições e interpretar a execução de programas (LAHTINEN; ALA-MUTKA; JÄRVINEN, 2005; MCCALL; KÖLLING, 2019). Por isso, exemplos pequenos, rastreamento passo a passo e testes de fronteira são práticas centrais nesta página.
-
-### Comparação versus atribuição
+Inverte o valor lógico.
 
 ```python
-# Correto: comparação
-if resposta == "sim":
-    print("Confirmado")
+if not ativo:
+    bloquear()
 ```
+
+</td>
+</tr>
+</table>
+
+## 7. Fronteiras: onde os erros aparecem
+
+| Nota | Esperado | Tipo de caso |
+|---:|---|---|
+| `0` | Reprovado | limite inferior válido |
+| `4.9` | Reprovado | imediatamente antes da transição |
+| `5` | Recuperação | transição |
+| `6.9` | Recuperação | imediatamente antes da transição |
+| `7` | Aprovado | transição |
+| `10` | Aprovado | limite superior válido |
+| `-0.1` | erro | abaixo do domínio |
+| `10.1` | erro | acima do domínio |
+
+> [!TIP]
+> Para cada limite, teste três pontos: **antes, exatamente no limite e depois**.
+
+## 8. Padrões melhores
 
 ### Evite comparação booleana redundante
 
 ```python
 # Menos claro
 if ativo == True:
-    print("Ativo")
+    liberar()
 
 # Preferível
 if ativo:
-    print("Ativo")
+    liberar()
 ```
 
-### Evite aninhamento quando um retorno antecipado resolve
+### Use retorno antecipado para reduzir aninhamento
 
 ```python
 def autorizar(idade: int) -> str:
@@ -167,52 +212,42 @@ def autorizar(idade: int) -> str:
     return "Autorizado"
 ```
 
-## 8. Valores de fronteira
+## 9. Erros comuns
 
-Testes devem verificar exatamente os pontos em que o resultado muda.
+> [!WARNING]
+> - usar `=` quando a intenção é comparar com `==`;
+> - colocar a condição mais ampla primeiro;
+> - esconder entrada inválida dentro de uma classificação;
+> - aninhar blocos sem necessidade;
+> - testar apenas valores centrais;
+> - misturar regra de negócio com `input()` e `print()`.
 
-| Nota | Resultado esperado |
-|---:|---|
-| `0` | Reprovado |
-| `4.9` | Reprovado |
-| `5` | Recuperação |
-| `6.9` | Recuperação |
-| `7` | Aprovado |
-| `10` | Aprovado |
-| `-0.1` | Erro |
-| `10.1` | Erro |
+## 10. Atividade guiada
 
-## 9. Atividade guiada
+Implemente uma função para classificar temperatura:
 
-Implemente uma função que receba uma temperatura e retorne:
+- abaixo de `18`: `Frio`;
+- de `18` até `27`: `Agradável`;
+- acima de `27`: `Quente`.
 
-- `Frio`, quando for menor que 18;
-- `Agradável`, entre 18 e 27;
-- `Quente`, acima de 27.
+Teste `17.9`, `18`, `27` e `27.1`.
 
-Depois escreva testes para `17.9`, `18`, `27` e `27.1`.
+## 11. Desafio independente
 
-## 10. Boas práticas
+Classifique uma hora inteira entre `0` e `23` como madrugada, manhã, tarde ou noite. Defina os limites antes de codificar e escreva testes para cada transição.
 
-- valide o domínio antes de aplicar a classificação;
-- ordene condições do caso mais restritivo para o mais amplo;
-- dê preferência a expressões booleanas legíveis;
-- teste cada fronteira imediatamente antes, no ponto e imediatamente depois;
-- mantenha a regra separada de `input()` e `print()`.
-
-## 11. Exercício independente
-
-Crie uma função que classifique um horário inteiro entre `0` e `23` como madrugada, manhã, tarde ou noite. Defina por escrito os limites, rejeite valores inválidos e escreva testes para cada transição.
-
-## 12. Prática no repositório
-
-Execute:
+## 12. Prática no projeto
 
 ```bash
 python desafios/02_condicionais.py
 ```
 
-Em seguida, consulte os testes relacionados e observe como cada limite é verificado.
+Depois localize os testes e identifique:
+
+- casos de sucesso;
+- valores de fronteira;
+- entradas inválidas;
+- mensagens de erro esperadas.
 
 ## Referências
 
@@ -220,8 +255,14 @@ LAHTINEN, Essi; ALA-MUTKA, Kirsti; JÄRVINEN, Hannu-Matti. A study of the diffic
 
 MCCALL, Davin; KÖLLING, Michael. A new look at novice programmer errors. *ACM Transactions on Computing Education*, v. 19, n. 4, p. 1-30, 2019. DOI: <https://doi.org/10.1145/3335814>.
 
-PYTHON SOFTWARE FOUNDATION. *The Python language reference: compound statements*. Versão 3.14. [S. l.], 2026a. Disponível em: <https://docs.python.org/3.14/reference/compound_stmts.html>. Acesso em: 2 ago. 2026.
-
 ROBINS, Anthony; ROUNTREE, Janet; ROUNTREE, Nathan. Learning and teaching programming: a review and discussion. *Computer Science Education*, v. 13, n. 2, p. 137-172, 2003. DOI: <https://doi.org/10.1076/csed.13.2.137.14200>.
 
-[Voltar para Home](Home)
+PYTHON SOFTWARE FOUNDATION. *The Python language reference: compound statements*. Versão 3.14. Disponível em: <https://docs.python.org/3.14/reference/compound_stmts.html>. Acesso em: 2 ago. 2026.
+
+---
+
+<div align="center">
+
+[← Fundamentos](Introducao-a-Logica-de-Programacao-com-Python) · [Home](Home) · **Próxima etapa:** [Repetições →](Estruturas-de-Repeticao)
+
+</div>
