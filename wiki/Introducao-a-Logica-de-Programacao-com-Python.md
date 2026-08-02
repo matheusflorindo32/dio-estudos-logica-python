@@ -2,7 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/matheusflorindo32/dio-estudos-logica-python/main/docs/assets/wiki/wiki-introducao.svg" alt="Módulo visual de introdução à lógica de programação" width="100%">
 
-[← Home](Home) · [Condicionais →](Estruturas-Condicionais)
+[← Home](https://github.com/matheusflorindo32/dio-estudos-logica-python/wiki) · [Condicionais →](https://github.com/matheusflorindo32/dio-estudos-logica-python/wiki/Estruturas-Condicionais)
 
 </div>
 
@@ -140,9 +140,9 @@ aprovado = media >= 7
 | Repetição | percorrer ou repetir | `for nota in notas:` |
 | Função | agrupar e reutilizar | `def calcular_media(...):` |
 
-- [Aprofundar condicionais](Estruturas-Condicionais)
-- [Aprofundar repetições](Estruturas-de-Repeticao)
-- [Aprofundar funções](Funcoes-em-Python)
+- [Aprofundar condicionais](https://github.com/matheusflorindo32/dio-estudos-logica-python/wiki/Estruturas-Condicionais)
+- [Aprofundar repetições](https://github.com/matheusflorindo32/dio-estudos-logica-python/wiki/Estruturas-de-Repeticao)
+- [Aprofundar funções](https://github.com/matheusflorindo32/dio-estudos-logica-python/wiki/Funcoes-em-Python)
 
 ## 5. Primeiro programa completo
 
@@ -251,6 +251,6 @@ PYTHON SOFTWARE FOUNDATION. *Python 3.14 documentation*. Disponível em: <https:
 
 <div align="center">
 
-[← Home](Home) · **Próxima etapa:** [Estruturas Condicionais →](Estruturas-Condicionais)
+[← Home](https://github.com/matheusflorindo32/dio-estudos-logica-python/wiki) · **Próxima etapa:** [Estruturas Condicionais →](https://github.com/matheusflorindo32/dio-estudos-logica-python/wiki/Estruturas-Condicionais)
 
 </div>
