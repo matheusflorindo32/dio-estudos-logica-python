@@ -10,6 +10,12 @@ Ao concluir esta página, você deverá ser capaz de:
 - prevenir laços infinitos;
 - acompanhar a execução de um laço por meio de uma tabela de rastreamento.
 
+## Pré-requisitos
+
+- variáveis, condições e operadores de comparação;
+- listas e a função `range()` em nível introdutório;
+- leitura da página [Estruturas Condicionais](Estruturas-Condicionais).
+
 ## 1. O que são estruturas de repetição?
 
 Estruturas de repetição, também chamadas de **laços** ou **loops**, permitem executar um bloco de instruções várias vezes. Elas reduzem duplicação de código e ajudam a representar processos iterativos.
@@ -153,7 +159,7 @@ A função é testável porque recebe os dados diretamente e devolve um valor, s
 
 ## 8. Erros comuns de iniciantes
 
-A literatura em educação em programação relata dificuldades frequentes para compreender o fluxo de execução, os limites do intervalo, a atualização de variáveis e a condição de parada (ROBINS; ROUNTREE; ROUNTREE, 2003). Um preprint recente organiza erros de interpretação relacionados a seleção e iteração, mostrando que estudantes podem confundir a quantidade de execuções ou o momento em que a condição é avaliada (ECKERT; KAUTZ, 2026); esse trabalho ainda não deve ser apresentado como artigo revisado por pares.
+A literatura revisada por pares em educação em programação relata dificuldades frequentes para compreender o fluxo de execução, acompanhar mudanças de estado e interpretar construções fundamentais (ROBINS; ROUNTREE; ROUNTREE, 2003; LAHTINEN; ALA-MUTKA; JÄRVINEN, 2005). A prática deliberada com rastreamento e exemplos progressivos reduz a carga cognitiva desnecessária durante a resolução de problemas (SWELLER, 1988).
 
 Erros comuns incluem:
 
@@ -175,7 +181,19 @@ Requisitos:
 - retorne `None` quando não houver nenhuma nota válida;
 - escreva pelo menos três testes.
 
-## 10. Prática no repositório
+## 10. Boas práticas
+
+- defina claramente o que encerra o laço;
+- atualize de forma visível o estado usado pela condição de um `while`;
+- prefira `for` quando a coleção ou quantidade de passos é conhecida;
+- evite modificar uma coleção enquanto a percorre;
+- teste sequência vazia, um elemento e limites de intervalo.
+
+## 11. Exercício independente
+
+Implemente uma função que receba uma lista de temperaturas e retorne quantos valores formam uma sequência consecutiva acima de um limite informado. Decida o comportamento para lista vazia, documente-o e teste pelo menos quatro cenários.
+
+## 12. Prática no repositório
 
 Execute:
 
@@ -192,7 +210,7 @@ Depois:
 
 ## Referências
 
-ECKERT, Dimitri; KAUTZ, Christian. How students (mis)understand conditionals and loops: a taxonomy. [Preprint]. *arXiv*, 2026. DOI: <https://doi.org/10.48550/arXiv.2605.26966>.
+LAHTINEN, Essi; ALA-MUTKA, Kirsti; JÄRVINEN, Hannu-Matti. A study of the difficulties of novice programmers. *ACM SIGCSE Bulletin*, v. 37, n. 3, p. 14-18, 2005. DOI: <https://doi.org/10.1145/1151954.1067453>.
 
 PYTHON SOFTWARE FOUNDATION. *The Python language reference: compound statements*. Versão 3.14. [S. l.], 2026a. Disponível em: <https://docs.python.org/3.14/reference/compound_stmts.html>. Acesso em: 2 ago. 2026.
 

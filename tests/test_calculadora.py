@@ -1,7 +1,10 @@
 """Testes das operações da calculadora."""
 
+import builtins
+
 import pytest
 
+from exemplos import calculadora
 from exemplos.calculadora import calcular, dividir, multiplicar, somar, subtrair
 
 
@@ -31,3 +34,24 @@ def test_calcular_rejeita_operador_desconhecido() -> None:
     with pytest.raises(ValueError, match="Operador inválido"):
         calcular(8, "%", 3)
 
+
+def test_main_exibe_resultado(
+    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    entradas = iter(["12", "/", "4"])
+    monkeypatch.setattr(builtins, "input", lambda _mensagem: next(entradas))
+
+    calculadora.main()
+
+    assert "Resultado: 3" in capsys.readouterr().out
+
+
+def test_main_trata_divisao_por_zero(
+    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    entradas = iter(["12", "/", "0"])
+    monkeypatch.setattr(builtins, "input", lambda _mensagem: next(entradas))
+
+    calculadora.main()
+
+    assert "Erro: Não é possível dividir por zero." in capsys.readouterr().out

@@ -14,11 +14,11 @@ A template `.github/PULL_REQUEST_TEMPLATE.md` solicita descrição, tipo, testes
 
 ## GitHub Actions
 
-O workflow `.github/workflows/python-tests.yml` é executado em `push` e `pull_request`. A matriz usa Python 3.11 e 3.12 no Ubuntu, instala apenas a dependência de desenvolvimento e executa pytest.
+O workflow `.github/workflows/python-tests.yml` é executado em `push` e `pull_request` com permissões somente de leitura. O job `Quality`, no Python 3.14, executa compilação, Ruff lint e formatação, mypy, pytest e cobertura de linhas e branches, publica um resumo e envia `coverage.xml` como artefato temporário. A matriz independente executa compilação e testes no Python 3.11, 3.12, 3.13 e 3.14.
 
 ## Wiki
 
-As fontes versionadas ficam em `wiki/`. A publicação na GitHub Wiki usa um repositório Git separado, o que permite manter as páginas preparadas mesmo quando a Wiki ainda não está habilitada.
+As fontes versionadas ficam em `wiki/`. A publicação na [GitHub Wiki oficial](https://github.com/matheusflorindo32/dio-estudos-logica-python/wiki) usa um repositório Git separado. As cinco páginas são sincronizadas preservando nomes e páginas existentes, e a validação inclui conteúdo renderizado, navegação, código, referências e ausência de respostas 404.
 
 ## Arquivos comunitários
 
@@ -26,6 +26,9 @@ As fontes versionadas ficam em `wiki/`. A publicação na GitHub Wiki usa um rep
 - `CODE_OF_CONDUCT.md`: ambiente respeitoso e seguro;
 - `LICENSE`: permissões da licença MIT;
 - `CHANGELOG.md`: histórico das versões.
+- `README.md` e `README.pt-BR.md`: apresentação internacional e versão integral em português.
+- `docs/quality.md`: controles locais e remotos.
+- `docs/scientific-foundation.md`: política e referências publicadas.
+- `docs/internationalization.md`: contrato de equivalência entre idiomas.
 
 Consulte [evidencias-entrega.md](evidencias-entrega.md) para distinguir itens preparados localmente de recursos confirmados no GitHub.
-

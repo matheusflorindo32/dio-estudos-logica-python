@@ -1,8 +1,14 @@
 """Testes da lógica de negócio do organizador de estudos."""
 
+import builtins
+
 import pytest
 
-from exemplos.organizador_estudos import OrganizadorEstudos
+from exemplos.organizador_estudos import (
+    OrganizadorEstudos,
+    exibir_tarefas,
+    main,
+)
 
 
 def test_adicionar_e_listar_tarefa() -> None:
@@ -58,3 +64,59 @@ def test_identificadores_nao_sao_reutilizados() -> None:
 
     assert segunda.identificador == 2
 
+
+def test_localizar_tarefa_percorre_itens_anteriores() -> None:
+    organizador = OrganizadorEstudos()
+    organizador.adicionar_tarefa("Primeira")
+    segunda = organizador.adicionar_tarefa("Segunda")
+
+    concluida = organizador.concluir_tarefa(segunda.identificador)
+
+    assert concluida == segunda
+    assert concluida.concluida is True
+
+
+def test_exibir_tarefas_cobre_estado_vazio_e_concluido(
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    organizador = OrganizadorEstudos()
+    exibir_tarefas(organizador)
+    tarefa = organizador.adicionar_tarefa("Estudar testes")
+    organizador.concluir_tarefa(tarefa.identificador)
+    exibir_tarefas(organizador)
+
+    saida = capsys.readouterr().out
+    assert "Nenhuma tarefa cadastrada." in saida
+    assert "[x] Estudar testes" in saida
+
+
+def test_main_percorre_fluxo_completo_do_menu(
+    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    entradas = iter(
+        [
+            "inválida",
+            "2",
+            "1",
+            "Estudar funções",
+            "2",
+            "3",
+            "1",
+            "2",
+            "4",
+            "1",
+            "4",
+            "1",
+            "0",
+        ]
+    )
+    monkeypatch.setattr(builtins, "input", lambda _mensagem: next(entradas))
+
+    main()
+
+    saida = capsys.readouterr().out
+    assert "Opção inválida." in saida
+    assert "Nenhuma tarefa cadastrada." in saida
+    assert "[ ] Estudar funções" in saida
+    assert "[x] Estudar funções" in saida
+    assert "Tarefa 1 não encontrada." in saida

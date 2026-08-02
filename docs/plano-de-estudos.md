@@ -33,9 +33,12 @@ Este roteiro propõe cinco etapas curtas. Avance somente depois de conseguir exp
 - Explore os três arquivos de `exemplos/`.
 - Relacione cada regra de negócio ao seu teste em `tests/`.
 - Execute `python -m pytest -v`.
+- Meça linhas e branches com pytest-cov e investigue qualquer lacuna relevante.
+- Execute Ruff, mypy e `compileall` conforme [quality.md](quality.md).
 - Crie uma Issue para uma melhoria, implemente-a em uma branch e abra um Pull Request.
 
 ## Critério de domínio
 
 Ao final, explique cada solução sem ler o código, altere uma regra com segurança e escreva ao menos um novo teste para provar o comportamento esperado.
 
+Use a [Wiki oficial](https://github.com/matheusflorindo32/dio-estudos-logica-python/wiki) como material de apoio. Cada etapa temática inclui pré-requisitos, exercício guiado, prática independente e ligação com arquivos testados do repositório.

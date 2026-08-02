@@ -10,6 +10,14 @@ Ao concluir esta página, você deverá ser capaz de:
 - relacionar condições, repetições e funções à construção de algoritmos;
 - executar um pequeno programa em Python e analisar seu comportamento.
 
+## Pré-requisitos
+
+- Python 3.11 ou superior instalado;
+- acesso a um terminal e a um editor;
+- capacidade de criar e salvar um arquivo de texto.
+
+Não é necessário ter programado anteriormente.
+
 ## 1. Algoritmo, programa e pensamento computacional
 
 Um **algoritmo** é uma sequência finita, ordenada e não ambígua de instruções para resolver um problema. Um **programa** é a implementação de um ou mais algoritmos em uma linguagem que o computador consegue interpretar ou executar.
@@ -45,10 +53,10 @@ Essa decomposição reduz a carga de memória durante a resolução do problema 
 Variáveis associam nomes a valores utilizados pelo programa. Em Python, o tipo é determinado dinamicamente a partir do valor atribuído.
 
 ```python
-nome = "Ana"          # str: texto
-idade = 20            # int: número inteiro
-altura = 1.68         # float: número decimal
-estudante = True      # bool: verdadeiro ou falso
+nome = "Ana"  # str: texto
+idade = 20  # int: número inteiro
+altura = 1.68  # float: número decimal
+estudante = True  # bool: verdadeiro ou falso
 ```
 
 Escolha nomes que expressem o significado do dado. `media_final` comunica melhor a intenção do que `m`.
@@ -149,7 +157,23 @@ Para cada conceito:
 
 A revisão de Robins, Rountree e Rountree (2003) indica que aprender programação envolve desenvolver conhecimento sintático, conceitual e estratégico. Por isso, apenas copiar códigos é insuficiente: é necessário prever, testar, explicar e corrigir.
 
-## 8. Exercício prático
+## 8. Boas práticas iniciais
+
+- use nomes que expressem o propósito de cada dado;
+- valide entradas antes de calcular resultados;
+- mantenha cálculo e apresentação em etapas distinguíveis;
+- execute casos normais, limites e valores inválidos;
+- leia o traceback começando pela última mensagem do erro.
+
+## 9. Erros comuns
+
+- começar a codificar sem definir entrada e saída;
+- escolher nomes que não revelam o significado dos dados;
+- confundir texto numérico com valores `int` ou `float`;
+- ignorar precedência de operadores em expressões;
+- testar apenas um valor conveniente.
+
+## 10. Exercício guiado
 
 Crie um programa que:
 
@@ -160,6 +184,14 @@ Crie um programa que:
 - rejeite notas menores que 0 ou maiores que 10.
 
 Depois compare sua solução com os arquivos das pastas `desafios/` e `exemplos/`.
+
+## 11. Exercício independente
+
+Modele um conversor de tempo que receba uma quantidade total de minutos e informe horas e minutos restantes. Antes de programar, registre entrada, processamento, saída e duas validações. Implemente a solução e teste os valores `0`, `59`, `60` e `125`.
+
+## 12. Ligação com o repositório
+
+Execute `python desafios/01_variaveis.py` e localize em `tests/test_variaveis.py` as verificações correspondentes. Compare as escolhas de nomes, tipos e formatação com as boas práticas desta página.
 
 ## Referências
 
