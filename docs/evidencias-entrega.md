@@ -9,6 +9,7 @@
 | URL da Issue | <https://github.com/matheusflorindo32/dio-estudos-logica-python/issues/1> |
 | Pull Request da funcionalidade | <https://github.com/matheusflorindo32/dio-estudos-logica-python/pull/2> |
 | Pull Request da documentação científica | <https://github.com/matheusflorindo32/dio-estudos-logica-python/pull/3> — mesclado |
+| Pull Request da publicação oficial | <https://github.com/matheusflorindo32/dio-estudos-logica-python/pull/4> |
 | Status do merge da funcionalidade | CONCLUÍDO — merge commit `2dc87bd`, em 2026-08-02 12:01:40 UTC |
 | Status da Issue | ENCERRADA automaticamente pelo `Closes #1` do Pull Request |
 | Status da Wiki | PUBLICADA E VERIFICADA — cinco páginas oficiais acessíveis |
