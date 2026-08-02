@@ -35,7 +35,15 @@ Linha de base anterior à evolução: 39 testes aprovados e 41% de cobertura com
 
 ## Integração contínua
 
-O workflow possui um job `Quality` no Python 3.14 e uma matriz independente para Python 3.11, 3.12, 3.13 e 3.14. O Pull Request #6 iniciou os checks; o resultado final e a execução após o merge serão registrados após a conclusão real.
+O workflow possui um job `Quality` no Python 3.14 e uma matriz independente para Python 3.11, 3.12, 3.13 e 3.14. Os cinco jobs foram aprovados no [evento de push](https://github.com/matheusflorindo32/dio-estudos-logica-python/actions/runs/30752831554) e no [evento do Pull Request](https://github.com/matheusflorindo32/dio-estudos-logica-python/actions/runs/30752833102), ambos para o commit `7e744da`.
+
+| Job | Resultado no Pull Request |
+|---|---|
+| Quality — Python 3.14 | APROVADO |
+| Tests — Python 3.11 | APROVADO |
+| Tests — Python 3.12 | APROVADO |
+| Tests — Python 3.13 | APROVADO |
+| Tests — Python 3.14 | APROVADO |
 
 ## Fundamentação científica
 
@@ -94,6 +102,6 @@ A entrega inicial permanece rastreável nos Pull Requests [#2](https://github.co
 - [x] README internacional e versão integral em português criados;
 - [x] Wiki oficial sincronizada e cinco páginas verificadas;
 - [x] Pull Request #6 aberto e ligado à Issue #5;
-- [ ] CI final aprovado em todos os cinco jobs;
+- [x] CI aprovado em todos os cinco jobs no push e no Pull Request;
 - [ ] Pull Request mesclado e commit de merge registrado;
 - [ ] Issue #5 encerrada.
